@@ -3,8 +3,14 @@ Installed:
 Next.js
 npx create-next-app@latest .
 
+Contentful
+npm install contentful
 
-for using local fonts:
+Styled Components
+npm install --save styled-components
+
+____________
+For using local fonts:
 OBS! Create a folder "fonts" in app-folder
 
 -- in layout.tsx --
@@ -33,7 +39,7 @@ export default function RootLayout({
     </html>
   );
 }
-
+____________
 
 ## Favicon Recommendations
 
@@ -50,3 +56,14 @@ To ensure your favicon looks good across different devices and browsers, conside
 - **PNG**: Good quality and supports transparency.
 
 OBS! Save it as favicon.ico and place the icon in the same folder as app-folder
+
+____________
+
+OBS! IN CONTENTFUL, LOG IN AND GO TO SETTINGS, CHOSE API KEYS, CREATE ONE OF IF EMPTY, USE THE CREDENTIALS
+
+.env.local - file needs to setup and configure in teh root-map
+example things to add in your .env.local:
+
+CONTENTFUL_SPACE_ID=your Space ID
+CONTENTFUL_ACCESS_TOKEN=Content Delivery API token
+CONTENTFUL_PREVIEW_ACCESS_TOKEN=Content Preview API token
