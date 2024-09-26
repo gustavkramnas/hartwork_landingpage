@@ -2,48 +2,41 @@ import { ATitle } from './components/AStyledComponent'
 import Image from 'next/image'
 import { fetchExample } from './utils/contentful/queries/home'
 
-type ImageFile = {
-  url: string
-}
-
 type ExampleResponse = {
   fields: {
     title: string
     image: {
       fields: {
-        file: ImageFile
+        file: { url: string }
         title: string
       }
     }
   }
 }
 
-// Serverkomponent som hämtar data och visar den
 export default async function Home() {
-  // Hämta data från Contentful
   const responseExample = (await fetchExample()) as ExampleResponse
   console.log('Fetched data:', responseExample)
-  // Hämta titel och bilddata
-  const title = responseExample.fields.title
-  const imageUrl = responseExample.fields.image?.fields.file.url || ''
 
-  const absoluteImageUrl = imageUrl ? `https:${imageUrl}` : ''
+  const absoluteImageUrl = `https:${
+    responseExample.fields.image?.fields.file.url || ''
+  }`
 
   return (
     <>
-      <ATitle>{title}</ATitle>
-      {imageUrl ? (
-        <div style={{ position: 'relative', width: '100%', height: '600px' }}>
+      <ATitle>{responseExample.fields.title}</ATitle>
+      {absoluteImageUrl ? (
+        <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
           <Image
             src={absoluteImageUrl}
-            alt={'bajs'}
+            alt={'Alt text'}
             fill
             priority
             style={{ objectFit: 'cover' }}
           />
         </div>
       ) : (
-        <>KUK</>
+        <ATitle>No image</ATitle>
       )}
     </>
   )
