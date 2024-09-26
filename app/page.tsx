@@ -1,3 +1,5 @@
+'use client'
+import { ATitle } from './components/AStyledComponent'
 export default function Home() {
-  return <h1>empty</h1>
+  return <ATitle>empty</ATitle>
 }
