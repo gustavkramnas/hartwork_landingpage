@@ -7,7 +7,7 @@ export const fetchPosts = async (): Promise<any> => {
     const response = await ContentfulClient.getEntries({
       content_type: 'case',
     });
-    console.log('Alla case-entries:', response.items);
+    // console.log('Alla case-entries:', response.items);
 
     return response.items;
   } catch (error) {

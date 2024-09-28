@@ -1,19 +1,20 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ATitle } from './components/AStyledComponent'
 import Image from 'next/image'
 import { fetchExample } from './utils/contentful/queries/home'
 
 import { fetchPosts } from './utils/contentful/queries/posts'
+import PostComponent from './components/PostComponent'
+import { Post } from './types/Types'
 
 export default async function Home() {
   const responseExample = await fetchExample()
-  console.log('Fetched data:', responseExample)
 
   const absoluteImageUrl = `https:${
     responseExample.fields.image?.fields.file.url || ''
   }`
 
-  const cases = await fetchPosts()
+  const posts = await fetchPosts()
+  console.log('posts:', posts)
 
   return (
     <>
@@ -33,11 +34,22 @@ export default async function Home() {
       )}
 
       <div>
-        {cases.map((post: any) => (
-          <div key={post.sys.id}>
-            <ATitle>{post.fields.title}</ATitle>
-          </div>
-        ))}
+        {posts.map((post: Post) => {
+          const thumbnailUrl = `https:${
+            post.fields.thumbnail?.fields.file.url || ''
+          }`
+          const title = post.fields.title || 'No Title'
+          const slug = post.fields.slug || 'no-slug'
+
+          return (
+            <PostComponent
+              key={post.sys.id}
+              title={title}
+              thumbnailUrl={thumbnailUrl}
+              slug={slug}
+            />
+          )
+        })}
       </div>
     </>
   )
