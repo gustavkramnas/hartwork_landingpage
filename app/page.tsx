@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ATitle } from './components/AStyledComponent'
 import Image from 'next/image'
 import { fetchExample } from './utils/contentful/queries/home'
+
+import { fetchPosts } from './utils/contentful/queries/posts'
 
 type ExampleResponse = {
   fields: {
@@ -22,6 +25,8 @@ export default async function Home() {
     responseExample.fields.image?.fields.file.url || ''
   }`
 
+  const cases = await fetchPosts()
+
   return (
     <>
       <ATitle>{responseExample.fields.title}</ATitle>
@@ -38,6 +43,14 @@ export default async function Home() {
       ) : (
         <ATitle>No image</ATitle>
       )}
+
+      <div>
+        {cases.map((post: any) => (
+          <div key={post.sys.id}>
+            <ATitle>{post.fields.title}</ATitle>
+          </div>
+        ))}
+      </div>
     </>
   )
 }
