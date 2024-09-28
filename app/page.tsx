@@ -5,20 +5,8 @@ import { fetchExample } from './utils/contentful/queries/home'
 
 import { fetchPosts } from './utils/contentful/queries/posts'
 
-type ExampleResponse = {
-  fields: {
-    title: string
-    image: {
-      fields: {
-        file: { url: string }
-        title: string
-      }
-    }
-  }
-}
-
 export default async function Home() {
-  const responseExample = (await fetchExample()) as ExampleResponse
+  const responseExample = await fetchExample()
   console.log('Fetched data:', responseExample)
 
   const absoluteImageUrl = `https:${
