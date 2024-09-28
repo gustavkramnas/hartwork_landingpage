@@ -14,8 +14,7 @@ const ThumbnailContainer = styled.div`
   width: 300px;
   height: 200px;
 `
-
-const PostComponent = ({ title, thumbnailUrl, slug }: OnePost) => {
+export const PostComponent = ({ title, thumbnailUrl, slug }: OnePost) => {
   return (
     <Container>
       <Link href={`/${slug}`}>
@@ -38,4 +37,3 @@ const PostComponent = ({ title, thumbnailUrl, slug }: OnePost) => {
   )
 }
 
-export default PostComponent

@@ -3,8 +3,9 @@ import Image from 'next/image'
 import { fetchExample } from './utils/contentful/queries/home'
 
 import { fetchPosts } from './utils/contentful/queries/posts'
-import PostComponent from './components/PostComponent'
+
 import { Post } from './types/Types'
+import { PostComponent } from './components/PostComponent'
 
 export default async function Home() {
   const responseExample = await fetchExample()
