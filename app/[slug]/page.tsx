@@ -33,6 +33,5 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
     </div>
   )
 }
-//test commit
 
 export default SlugPage
