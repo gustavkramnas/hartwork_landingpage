@@ -6,7 +6,8 @@ import { fetchPosts } from './utils/contentful/queries/posts'
 
 import { Post } from './types/Types'
 import { PostComponent } from './components/PostComponent'
-import { H1 } from './components/fontComponents/fonts'
+import { H1, Heading3 } from './components/fontComponents/fonts'
+import { TestComponent } from './components/pageComponents/PageComponents'
 
 export default async function Home() {
   const responseExample = await fetchExample()
@@ -20,7 +21,9 @@ export default async function Home() {
 
   return (
     <>
-      <H1>{responseExample.fields.title}</H1>
+      <H1 text={responseExample.fields.title} />
+      <TestComponent text={'Test Component'} />
+      <Heading3>{responseExample.fields.title}</Heading3>
       {absoluteImageUrl ? (
         <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
           <Image

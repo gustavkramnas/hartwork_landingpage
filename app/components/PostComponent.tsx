@@ -36,4 +36,3 @@ export const PostComponent = ({ title, thumbnailUrl, slug }: OnePost) => {
     </Container>
   )
 }
-

@@ -1,7 +1,7 @@
 import { H1 } from '../components/fontComponents/fonts'
 
 const Page = () => {
-  return <H1>Contact</H1>
+  return <H1 text={'Contact'} />
 }
 
-export default Page;
+export default Page

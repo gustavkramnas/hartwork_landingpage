@@ -1,7 +1,7 @@
-import { H1 } from '../components/fontComponents/fonts'
+import { H2 } from '../components/fontComponents/fonts'
 
 const Page = () => {
-  return <H1>About</H1>
+  return <H2>About</H2>
 }
 
-export default Page;
+export default Page

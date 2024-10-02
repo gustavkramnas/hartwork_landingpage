@@ -3,6 +3,7 @@ import './globals.css'
 import { NavBar } from './components/baseComponents/NavComponent'
 import { Footer } from './components/baseComponents/FooterComponent'
 import { theme } from './utils/appSettings/theme'
+import StyledComponentsRegistry from './lib/registry'
 
 export const metadata: Metadata = {
   title: theme.company,
@@ -16,11 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <NavBar />
-        {children}
-        <Footer />
-      </body>
+      <StyledComponentsRegistry>
+        <body>
+          <NavBar />
+          {children}
+          <Footer />
+        </body>
+      </StyledComponentsRegistry>
     </html>
   )
 }
