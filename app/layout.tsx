@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { NavBar } from './components/baseComponents/NavComponent'
 import { Footer } from './components/baseComponents/FooterComponent'
-import {theme} from './utils/appSettings.ts/theme'
+import { theme } from './utils/appSettings/theme'
 
 export const metadata: Metadata = {
   title: theme.company,
-  description: theme.description,
+  description: theme.description
 }
 
 export default function RootLayout({

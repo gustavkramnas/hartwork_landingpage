@@ -2,7 +2,7 @@ export const theme = {
   company: 'Hartwork',
   description: 'Hartwork agency',
   pages: {
-    links: ['/about', '/contact']
+    links: ['/about', '/contact', '/projects']
   },
   style: {
     colors: {

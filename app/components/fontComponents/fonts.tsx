@@ -1,5 +1,5 @@
 'use client'
-import { theme } from '@/app/utils/appSettings.ts/theme'
+import { theme } from '@/app/utils/appSettings/theme'
 import styled from 'styled-components'
 
 export const H1 = styled.h1`

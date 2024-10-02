@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import { theme } from '../../utils/appSettings.ts/theme'
+import { theme } from '../../utils/appSettings/theme'
+import Logo from './logo'
 export const NavBar = () => {
   const pages = theme.pages.links
   return (
     <header>
       <nav>
-        <Link href={'/'}>logo</Link>
+        <Logo />
         <ul className="link-wrapper">
           {pages.map((page) => {
             const title =
@@ -13,7 +14,7 @@ export const NavBar = () => {
 
             return (
               <li key={page}>
-                <Link href={page}>{title}</Link>{' '}
+                <Link href={page}>{title}</Link>
               </li>
             )
           })}
