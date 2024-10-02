@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { NavBar } from './components/NavComponent'
-import { Footer } from './components/FooterComponent'
+import { NavBar } from './components/baseComponents/NavComponent'
+import { Footer } from './components/baseComponents/FooterComponent'
 import {theme} from './utils/appSettings.ts/theme'
 
 export const metadata: Metadata = {
