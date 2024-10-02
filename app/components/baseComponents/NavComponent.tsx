@@ -8,7 +8,7 @@ export const NavBar = async () => {
 
   const imageUrl = companyInformation.fields.image?.fields.file.url
     ? `https:${companyInformation.fields.image.fields.file.url}`
-    : ''; // Se till att det finns en bild
+    : '';
 
   const pages = theme.pages.links;
 
@@ -17,12 +17,12 @@ export const NavBar = async () => {
       <nav>
         <CompanyLogo
           imageUrl={imageUrl}
-          companyName={companyInformation.fields.companyName} // Anta att companyName finns i companyInformation
+          companyName={companyInformation.fields.companyName}
         />
         <ul>
           {pages.map((page) => {
             const title =
-              page.replace('/', '').charAt(0).toUpperCase() + page.slice(1); // Korrigerad till slice(1) för att få rätt titel
+              page.replace('/', '').charAt(0).toUpperCase() + page.slice(1);
 
             return (
               <li key={page}>

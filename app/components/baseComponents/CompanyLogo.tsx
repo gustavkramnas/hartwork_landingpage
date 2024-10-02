@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 type Props = {
   imageUrl: string;
-  companyName: string; // För att stämma överens med din användning
+  companyName: string;
 };
 
 const LogoContainer = styled(Link)`
