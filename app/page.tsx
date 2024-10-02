@@ -15,9 +15,8 @@ export default async function Home() {
   const absoluteImageUrl = `https:${
     responseExample.fields.image?.fields.file.url || ''
   }`
-
   const posts = await fetchPosts()
-  console.log('posts:', posts)
+  //console.log('posts:', posts)
 
   return (
     <>
