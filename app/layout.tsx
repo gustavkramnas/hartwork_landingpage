@@ -2,10 +2,11 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { NavBar } from './components/NavComponent'
 import { Footer } from './components/FooterComponent'
+import {theme} from './utils/appSettings.ts/theme'
 
 export const metadata: Metadata = {
-  title: 'Empty landing page',
-  description: 'Remove this and write your own description'
+  title: theme.company,
+  description: theme.description,
 }
 
 export default function RootLayout({
