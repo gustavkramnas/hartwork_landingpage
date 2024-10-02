@@ -1,6 +1,8 @@
-export const Footer = ()=> {
+import { theme } from '../../utils/appSettings/theme'
+
+export const Footer = () => {
   return (
-    <footer>
+    <footer style={{ background: theme.style.colors.secondary }}>
       <p>contact</p>
     </footer>
   )

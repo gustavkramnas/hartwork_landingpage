@@ -7,7 +7,7 @@ export const theme = {
   style: {
     colors: {
       primary: '#000000',
-      secondary: '#FFFFFF'
+      secondary: '#e2021b'
     },
     font: {
       fontFamily: 'Arial, sans-serif',

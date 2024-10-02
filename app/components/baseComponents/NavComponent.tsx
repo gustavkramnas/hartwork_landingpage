@@ -7,7 +7,7 @@ export const NavBar = () => {
     <header>
       <nav>
         <Logo />
-        <ul className="link-wrapper">
+        <ul>
           {pages.map((page) => {
             const title =
               page.replace('/', '').charAt(0).toUpperCase() + page.slice(2)
