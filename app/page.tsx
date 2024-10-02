@@ -6,6 +6,7 @@ import { fetchPosts } from './utils/contentful/queries/posts'
 
 import { Post } from './types/Types'
 import { PostComponent } from './components/PostComponent'
+import { H1 } from './components/fontComponents/fonts'
 
 export default async function Home() {
   const responseExample = await fetchExample()
@@ -19,7 +20,7 @@ export default async function Home() {
 
   return (
     <>
-      <ATitle>{responseExample.fields.title}</ATitle>
+      <H1>{responseExample.fields.title}</H1>
       {absoluteImageUrl ? (
         <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
           <Image
