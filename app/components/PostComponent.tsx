@@ -1,9 +1,9 @@
 'use client'
 import styled from 'styled-components'
 import Image from 'next/image'
-import Link from 'next/link'
-import { ATitle } from './AStyledComponent'
 import { OnePost } from '../types/Types'
+import { H1 } from './fontComponents/fonts'
+import Link from 'next/link'
 
 const Container = styled.div`
   margin-bottom: 20px;
@@ -30,7 +30,7 @@ export const PostComponent = ({ title, thumbnailUrl, slug }: OnePost) => {
             />
           </ThumbnailContainer>
         ) : (
-          <ATitle>No Thumbnail</ATitle>
+          <H1>No Thumbnail</H1>
         )}
       </Link>
     </Container>
