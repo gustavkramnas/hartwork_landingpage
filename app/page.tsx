@@ -4,7 +4,7 @@ import { Project } from './types/Types'
 import { PostComponent } from './components/PostComponent'
 import { H1 } from './components/fontComponents/fonts'
 import { fetchProjects } from './utils/contentful/queries/project'
-import { ImageComponent } from './components/imageComponents/ImageComponents'
+import { ImageComponent } from './components/imageComponents/ImageComponent'
 
 export default async function Home() {
   const responseExample = await fetchExample()

@@ -1,16 +1,30 @@
 import { Project } from '../types/Types'
 import { H1 } from '../components/fontComponents/fonts'
 import { fetchProjects } from '../utils/contentful/queries/project'
-import { ImageComponent } from '../components/imageComponents/ImageComponents'
+import { ImageComponent } from '../components/imageComponents/ImageComponent'
+import { GalleryComponent } from '../components/imageComponents/GalleryComponent'
 
 const SlugPage = async ({ params }: { params: { slug: string } }) => {
   const projects = await fetchProjects()
 
+  const allGalleryItems: Array<{
+    sys: {
+      type: string
+      linkType: string
+      id: string
+    }
+    fields: {
+      title: string
+      file: {
+        url: string
+      }
+    }
+  }> = []
+
   projects.forEach((project: Project) => {
     if (project.fields.gallery && project.fields.gallery.length > 0) {
-      console.log('Gallery for project:', project.fields.title)
-      project.fields.gallery.forEach((item, index) => {
-        console.log(`Gallery item ${index + 1}:`, item)
+      project.fields.gallery.forEach((item) => {
+        allGalleryItems.push(item)
       })
     } else {
       console.log(`No gallery for project: ${project.fields.title}`)
@@ -35,6 +49,8 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
         <ImageComponent url={imageUrl} title={project.fields.title} />
       )}
       <H1>{project.fields.title}</H1>
+
+      <GalleryComponent galleryItems={allGalleryItems} />
     </div>
   )
 }

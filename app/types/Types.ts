@@ -100,6 +100,12 @@ export type Project = {
         linkType: string
         id: string
       }
+      fields: {
+        title: string
+        file: {
+          url: string
+        }
+      }
     }>
   }
 }
@@ -113,4 +119,22 @@ export type OnePost = {
 export type ImageProps = {
   url: string
   title?: string
+}
+
+export type GalleryItem = {
+  sys: {
+    type: string
+    linkType: string
+    id: string
+  }
+  fields: {
+    title: string
+    file: {
+      url: string
+    }
+  }
+}
+
+export type GalleryComponentProps = {
+  galleryItems: Array<GalleryItem>
 }
