@@ -1,19 +1,33 @@
-import { fetchPosts } from '../utils/contentful/queries/posts'
 import Image from 'next/image'
-import { Post } from '../types/Types'
+import { Project } from '../types/Types'
 import { H1 } from '../components/fontComponents/fonts'
+import { fetchProjects } from '../utils/contentful/queries/project'
 
 const SlugPage = async ({ params }: { params: { slug: string } }) => {
-  const posts = await fetchPosts()
+  const projects = await fetchProjects()
 
-  const post = posts.find((post: Post) => post.fields.slug === params.slug)
+  projects.forEach((project: Project) => {
+    if (project.fields.gallery && project.fields.gallery.length > 0) {
+      console.log("Gallery for project:", project.fields.title);
+      project.fields.gallery.forEach((item, index) => {
+        console.log(`Gallery item ${index + 1}:`, item);
+      });
+    } else {
+      console.log(`No gallery for project: ${project.fields.title}`);
+    }
+  });
 
-  if (!post) {
+
+  const project = projects.find(
+    (project: Project) => project.fields.slug === params.slug
+  )
+
+  if (!project) {
     return <H1>No Post Found</H1>
   }
 
-  const thumbnailUrl = post.fields.thumbnail?.fields.file.url
-    ? `https:${post.fields.thumbnail.fields.file.url}`
+  const thumbnailUrl = project.fields.projectThumbnail?.fields.file.url
+    ? `https:${project.fields.projectThumbnail.fields.file.url}`
     : ''
 
   return (
@@ -22,14 +36,14 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
         <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
           <Image
             src={thumbnailUrl}
-            alt={post.fields.title || 'Alt text'}
+            alt={project.fields.title || 'Alt text'}
             fill
             priority
             style={{ objectFit: 'cover' }}
           />
         </div>
       )}
-      <H1>{post.fields.title}</H1>
+      <H1>{project.fields.title}</H1>
     </div>
   )
 }

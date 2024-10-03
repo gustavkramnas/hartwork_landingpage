@@ -1,12 +1,10 @@
-
 import Image from 'next/image'
 import { fetchExample } from './utils/contentful/queries/home'
 
-import { fetchPosts } from './utils/contentful/queries/posts'
-
-import { Post } from './types/Types'
+import { Project } from './types/Types'
 import { PostComponent } from './components/PostComponent'
 import { H1 } from './components/fontComponents/fonts'
+import { fetchProjects } from './utils/contentful/queries/project'
 
 export default async function Home() {
   const responseExample = await fetchExample()
@@ -14,8 +12,10 @@ export default async function Home() {
   const absoluteImageUrl = `https:${
     responseExample.fields.image?.fields.file.url || ''
   }`
-  const posts = await fetchPosts()
+
   //console.log('posts:', posts)
+
+  const projects = await fetchProjects()
 
   return (
     <>
@@ -34,16 +34,16 @@ export default async function Home() {
       )}
 
       <div>
-        {posts.map((post: Post) => {
+        {projects.map((project: Project) => {
           const thumbnailUrl = `https:${
-            post.fields.thumbnail?.fields.file.url || ''
+            project.fields.projectThumbnail?.fields.file.url || ''
           }`
-          const title = post.fields.title || 'No Title'
-          const slug = post.fields.slug || 'no-slug'
+          const title = project.fields.title || 'No Title'
+          const slug = project.fields.slug || 'no-slug'
 
           return (
             <PostComponent
-              key={post.sys.id}
+              key={project.sys.id}
               title={title}
               thumbnailUrl={thumbnailUrl}
               slug={slug}
