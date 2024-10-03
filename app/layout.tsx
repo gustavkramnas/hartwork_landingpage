@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { NavBar } from './components/baseComponents/NavComponent'
+import { HeaderComponent } from './components/navbar/HeaderComponent'
 import { Footer } from './components/baseComponents/FooterComponent'
 import { theme } from './utils/appSettings/theme'
 import StyledComponentsRegistry from './lib/registry'
@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <StyledComponentsRegistry>
         <body>
-          <NavBar />
+          <HeaderComponent />
           {children}
           <Footer />
         </body>
