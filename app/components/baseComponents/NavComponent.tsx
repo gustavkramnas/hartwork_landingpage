@@ -22,7 +22,8 @@ export const NavBar = async () => {
         <ul>
           {pages.map((page) => {
             const title =
-              page.replace('/', '').charAt(0).toUpperCase() + page.slice(1)
+              page.replace('/', '').charAt(0).toUpperCase() +
+              page.replace('/', '').slice(1)
 
             return (
               <li key={page}>
