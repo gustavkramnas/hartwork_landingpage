@@ -1,7 +1,7 @@
 import { fetchPosts } from '../utils/contentful/queries/posts'
-import { ATitle } from '../components/AStyledComponent'
 import Image from 'next/image'
 import { Post } from '../types/Types'
+import { H1 } from '../components/fontComponents/fonts'
 
 const SlugPage = async ({ params }: { params: { slug: string } }) => {
   const posts = await fetchPosts()
@@ -9,7 +9,7 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
   const post = posts.find((post: Post) => post.fields.slug === params.slug)
 
   if (!post) {
-    return <ATitle>No Post Found</ATitle>
+    return <H1>No Post Found</H1>
   }
 
   const thumbnailUrl = post.fields.thumbnail?.fields.file.url
@@ -29,7 +29,7 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
           />
         </div>
       )}
-      <ATitle>{post.fields.title}</ATitle>
+      <H1>{post.fields.title}</H1>
     </div>
   )
 }

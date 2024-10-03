@@ -1,4 +1,4 @@
-import { ATitle } from './components/AStyledComponent'
+
 import Image from 'next/image'
 import { fetchExample } from './utils/contentful/queries/home'
 
@@ -6,8 +6,7 @@ import { fetchPosts } from './utils/contentful/queries/posts'
 
 import { Post } from './types/Types'
 import { PostComponent } from './components/PostComponent'
-import { H1, Heading3 } from './components/fontComponents/fonts'
-import { TestComponent } from './components/pageComponents/PageComponents'
+import { H1 } from './components/fontComponents/fonts'
 
 export default async function Home() {
   const responseExample = await fetchExample()
@@ -20,9 +19,6 @@ export default async function Home() {
 
   return (
     <>
-      <H1 text={responseExample.fields.title} />
-      <TestComponent text={'Test Component'} />
-      <Heading3>{responseExample.fields.title}</Heading3>
       {absoluteImageUrl ? (
         <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
           <Image
@@ -34,7 +30,7 @@ export default async function Home() {
           />
         </div>
       ) : (
-        <ATitle>No image</ATitle>
+        <H1>No image</H1>
       )}
 
       <div>
