@@ -1,15 +1,15 @@
-import Image from 'next/image'
 import { fetchExample } from './utils/contentful/queries/home'
 
 import { Project } from './types/Types'
 import { PostComponent } from './components/PostComponent'
 import { H1 } from './components/fontComponents/fonts'
 import { fetchProjects } from './utils/contentful/queries/project'
+import { ImageComponent } from './components/imageComponents/ImageComponents'
 
 export default async function Home() {
   const responseExample = await fetchExample()
 
-  const absoluteImageUrl = `https:${
+  const imageUrl = `https:${
     responseExample.fields.image?.fields.file.url || ''
   }`
 
@@ -19,16 +19,8 @@ export default async function Home() {
 
   return (
     <>
-      {absoluteImageUrl ? (
-        <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
-          <Image
-            src={absoluteImageUrl}
-            alt={'Alt text'}
-            fill
-            priority
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
+      {imageUrl ? (
+        <ImageComponent url={imageUrl} title={responseExample.fields.title} />
       ) : (
         <H1>No image</H1>
       )}

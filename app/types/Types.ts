@@ -104,9 +104,13 @@ export type Project = {
   }
 }
 
-
 export type OnePost = {
   title: string
   thumbnailUrl?: string
   slug?: string
+}
+
+export type ImageProps = {
+  url: string
+  title?: string
 }
