@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { HeaderComponent } from './components/navbarComponents/HeaderComponent'
-import { Footer } from './components/baseComponents/FooterComponent'
+import { Footer } from './components/footerComponents/FooterComponent'
 import { theme } from './utils/appSettings/theme'
 import StyledComponentsRegistry from './lib/registry'
 

@@ -1,4 +1,4 @@
-import { CompanyLogo } from './CompanyLogo'
+import { CompanyLogo } from '../baseComponents/CompanyLogo'
 import { PageLinksContainer } from './PageLinksContainer'
 import { Nav, Header } from './StyledComponents'
 

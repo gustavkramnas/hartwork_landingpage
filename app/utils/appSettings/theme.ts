@@ -14,7 +14,9 @@ export const theme = {
       headerSize: '24px'
     },
     layout: {
-      maxWidth: '1200px',
+      sizes: {
+        maxWidth: '1200px'
+      },
       cardPadding: '12px'
     }
   }
