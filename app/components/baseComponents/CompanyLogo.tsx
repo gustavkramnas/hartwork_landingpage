@@ -9,6 +9,12 @@ import { theme } from '../../utils/appSettings/theme'
 //   companyName: string
 // }
 
+// type Props = {
+//   red: boolean
+//   white: boolean
+//   black: boolean
+// }
+
 const LogoContainer = styled(Link)`
   position: relative;
   width: 200px;
