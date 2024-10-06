@@ -20,11 +20,12 @@ export const theme = {
     },
     layout: {
       sizes: {
-        maxWidth: '1200px'
+        maxWidth: '1200px',
+        mobileQueries: '768px',
       },
       cardPadding: '12px',
       desktopEdgePadding: '24px',
-      mobileEdgePadding: '12px',
+      mobileEdgePadding: '6px',
       buttonsPadding: '12px 24px',
       buttonRadius: '100px',
       gap: '12px',

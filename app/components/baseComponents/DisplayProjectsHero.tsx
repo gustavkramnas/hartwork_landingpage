@@ -34,6 +34,9 @@ const ProjectInformation = styled.div`
   width: 100%;
   max-width: ${theme.style.layout.sizes.maxWidth};
   padding: 0 ${theme.style.layout.desktopEdgePadding};
+  @media (max-width: ${theme.style.layout.sizes.mobileQueries}) {
+    padding: 0 ${theme.style.layout.mobileEdgePadding};
+  }
 `
 
 export const HeroComponent = ({ displayProjects }: Props) => {
