@@ -14,8 +14,6 @@ export default async function Home() {
     responseExample.fields.image?.fields.file.url || ''
   }`
 
-  //console.log('posts:', posts)
-
   const projects = await fetchProjects()
 
   console.log('projects:', projects)
