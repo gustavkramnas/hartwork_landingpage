@@ -13,13 +13,15 @@ export const theme = {
       fontFamily: 'Arial, sans-serif',
       headerSize: '24px',
       linkButtonWithArrowSize: '12px',
-      linkButtonWithArrowWeight: 'bold',
+      linkButtonWithArrowWeight: 'bold'
     },
     layout: {
       sizes: {
         maxWidth: '1200px'
       },
-      cardPadding: '12px'
+      cardPadding: '12px',
+      desktopEdgePadding: '24x',
+      mobileEdgePadding: '12px'
     }
   }
 }
