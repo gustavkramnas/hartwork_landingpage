@@ -63,7 +63,6 @@ export const HeroComponent = ({ displayProjects }: Props) => {
           />
           <ProjectInformationWrapper>
             <ProjectInformation>
-              {/* <H1>{displayProjects[currentProjectIndex].title}</H1> */}
               <ArrowButton
                 href={displayProjects[currentProjectIndex].slug}
                 title={displayProjects[currentProjectIndex].title}
