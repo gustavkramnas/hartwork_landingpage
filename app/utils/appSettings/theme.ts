@@ -24,7 +24,8 @@ export const theme = {
         maxWidth: '1200px',
         mobileQueries: '768px'
       },
-      cardPadding: '12px',
+      mobileSectionPadding: '24px',
+      desktopSectionPadding: '48px',
       desktopEdgePadding: '24px',
       mobileEdgePadding: '6px',
       buttonsPadding: '12px 24px',
