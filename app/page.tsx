@@ -1,31 +1,33 @@
-import { fetchExample } from './utils/contentful/queries/home'
+// import { fetchExample } from './utils/contentful/queries/home'
 
 import { Project } from './types/Types'
 import { PostComponent } from './components/PostComponent'
-import { H1 } from './components/fontComponents/fonts'
-import { fetchProjects } from './utils/contentful/queries/project'
-import { ImageComponent } from './components/imageComponents/ImageComponent'
+// import { H1 } from './components/fontComponents/fonts'
+import {
+  fetchDisplayProjectImagesWithDetails,
+  fetchProjects
+} from './utils/contentful/queries/project'
+// import { ImageComponent } from './components/imageComponents/ImageComponent'
+import { HeroComponent } from './components/homePageComponents/DisplayProjectsHero'
 
 export default async function Home() {
-  const responseExample = await fetchExample()
+  // const responseExample = await fetchExample()
 
+  // const imageUrl = `https:${
+  //   responseExample.fields.image?.fields.file.url || ''
+  // }`
 
-  const imageUrl = `https:${
-    responseExample.fields.image?.fields.file.url || ''
-  }`
-
-  const projects = await fetchProjects()
-
-  console.log('projects:', projects)
+  const projects: Project[] = await fetchProjects()
+  const displayProjects = await fetchDisplayProjectImagesWithDetails()
 
   return (
     <>
-      {imageUrl ? (
+      {/* {imageUrl ? (
         <ImageComponent url={imageUrl} title={responseExample.fields.title} />
       ) : (
         <H1>No image</H1>
-      )}
-
+      )} */}
+      <HeroComponent displayProjects={displayProjects} />
       <div>
         {projects.map((project: Project) => {
           const thumbnailUrl = `https:${

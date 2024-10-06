@@ -25,13 +25,11 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
     }
   }> = []
 
-  // Hitta projektet med rätt slug
   const project = projects.find(
     (project: Project) => project.fields.slug === params.slug
   )
 
   if (project) {
-    // Kolla om projektet har ett galleri och lägg till det
     if (project.fields.gallery && project.fields.gallery.length > 0) {
       project.fields.gallery.forEach((item: {
           sys: {
