@@ -23,11 +23,13 @@ export const theme = {
         maxWidth: '1200px'
       },
       cardPadding: '12px',
-      desktopEdgePadding: '24x',
+      desktopEdgePadding: '24px',
       mobileEdgePadding: '12px',
       buttonsPadding: '12px 24px',
       buttonRadius: '100px',
-      gap: '12px'
+      gap: '12px',
+      desktopPaddingTop: '180px',
+      mobilePaddingTop: '20px'
     },
     graphicsRendering: {
       strokeWeight: '1px'

@@ -1,5 +1,5 @@
 'use client'
-import { Container, Section } from '../baseComponents/base'
+import { Container, Section } from './base'
 import { AppButton } from '../buttonComponents/ButtonComponents'
 import { H2 } from '../fontComponents/fonts'
 

@@ -7,6 +7,7 @@ export const Nav = styled.nav`
   justify-content: space-between;
   width: 100%;
   max-width: ${theme.style.layout.sizes.maxWidth};
+  padding: 0 ${theme.style.layout.desktopEdgePadding};
 `
 export const Header = styled.header`
   position: fixed;

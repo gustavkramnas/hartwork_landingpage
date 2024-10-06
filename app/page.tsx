@@ -7,10 +7,10 @@ import {
   fetchProjects
 } from './utils/contentful/queries/project'
 // import { ImageComponent } from './components/imageComponents/ImageComponent'
-import { HeroComponent } from './components/homePageComponents/DisplayProjectsHero'
+import { HeroComponent } from './components/baseComponents/DisplayProjectsHero'
 import { Main } from './components/baseComponents/base'
 import { AboutSection } from './components/homePageComponents/AboutSection'
-import { ContactSection } from './components/homePageComponents/ContactSection'
+import { ContactSection } from './components/baseComponents/ContactSection'
 import { ProjectSection } from './components/projectComponents/ProjectSection'
 
 export default async function Home() {

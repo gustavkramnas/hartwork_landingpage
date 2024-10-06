@@ -7,6 +7,9 @@ import { GalleryComponent } from '../components/imageComponents/GalleryComponent
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS } from '@contentful/rich-text-types'
 import { AboutProjectSection } from '../components/projectComponents/AboutProjectSection'
+import { Main } from '../components/baseComponents/base'
+import { ProjectSection } from '../components/projectComponents/ProjectSection'
+import { ContactSection } from '../components/baseComponents/ContactSection'
 
 const SlugPage = async ({ params }: { params: { slug: string } }) => {
   const projects = await fetchProjects()
@@ -75,7 +78,7 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
     : ''
 
   return (
-    <div>
+    <Main>
       {imageUrl && (
         <ImageComponent url={imageUrl} title={project.fields.title} />
       )}
@@ -87,7 +90,9 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
         )}
       />
       <GalleryComponent galleryItems={galleryItems} />
-    </div>
+      <ProjectSection headLine={'Mer projekt'} projects={projects} />
+      <ContactSection />
+    </Main>
   )
 }
 

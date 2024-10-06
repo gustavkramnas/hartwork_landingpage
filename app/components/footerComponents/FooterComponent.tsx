@@ -1,7 +1,8 @@
 'use client'
 import styled from 'styled-components'
 import { theme } from '../../utils/appSettings/theme'
-import { P } from '../fontComponents/fonts'
+import { H1 } from '../fontComponents/fonts'
+import { Container, Section } from '../baseComponents/base'
 
 const FooterWrapper = styled.footer`
   margin: 0;
@@ -9,16 +10,14 @@ const FooterWrapper = styled.footer`
   background: ${theme.style.colors.secondary};
 `
 
-const Container = styled.div`
-  max-width: ${theme.style.layout.sizes.maxWidth};
-`
-
 export const Footer = () => {
   return (
     <FooterWrapper>
-      <Container>
-        <P>contact</P>
-      </Container>
+      <Section>
+        <Container>
+          <H1>Kontakt</H1>
+        </Container>
+      </Section>
     </FooterWrapper>
   )
 }
