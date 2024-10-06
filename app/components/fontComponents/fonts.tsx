@@ -22,3 +22,7 @@ export const P = styled.p`
   padding: 0;
   font-family: ${theme.style.font.fontFamily};
 `
+export const ButtonTitle = styled(P)`
+  font-size: ${theme.style.font.linkButtonWithArrowSize};
+  font-weight: ${theme.style.font.linkButtonWithArrowWeight};
+`

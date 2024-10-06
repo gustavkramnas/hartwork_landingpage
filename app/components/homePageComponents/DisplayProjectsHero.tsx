@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { H1 } from '../fontComponents/fonts'
 import { ImageComponent } from '../imageComponents/ImageComponent'
 import { theme } from '@/app/utils/appSettings/theme'
+import { ArrowButton } from '../buttonComponents/ButtonComponents'
 
 type DisplayProject = {
   imageUrl: string
@@ -35,11 +36,11 @@ const ProjectInformation = styled.div`
 `
 
 export const HeroComponent = ({ displayProjects }: Props) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentImageIndex(
+      setCurrentProjectIndex(
         (prevIndex) => (prevIndex + 1) % displayProjects.length
       )
     }, 5000)
@@ -52,12 +53,16 @@ export const HeroComponent = ({ displayProjects }: Props) => {
       {displayProjects.length > 0 ? (
         <Wrapper>
           <ImageComponent
-            url={displayProjects[currentImageIndex].imageUrl}
-            title={displayProjects[currentImageIndex].title}
+            url={displayProjects[currentProjectIndex].imageUrl}
+            title={displayProjects[currentProjectIndex].title}
           />
           <ProjectInformationWrapper>
             <ProjectInformation>
-              <H1>{displayProjects[currentImageIndex].title}</H1>
+              {/* <H1>{displayProjects[currentProjectIndex].title}</H1> */}
+              <ArrowButton
+                href={displayProjects[currentProjectIndex].slug}
+                title={displayProjects[currentProjectIndex].title}
+              />
             </ProjectInformation>
           </ProjectInformationWrapper>
         </Wrapper>

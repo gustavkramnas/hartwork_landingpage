@@ -11,7 +11,9 @@ export const theme = {
     },
     font: {
       fontFamily: 'Arial, sans-serif',
-      headerSize: '24px'
+      headerSize: '24px',
+      linkButtonWithArrowSize: '12px',
+      linkButtonWithArrowWeight: 'bold',
     },
     layout: {
       sizes: {
