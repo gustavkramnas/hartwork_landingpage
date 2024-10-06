@@ -1,9 +1,12 @@
 'use client'
+import { theme } from '@/app/utils/appSettings/theme'
 import styled from 'styled-components'
 
 export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  max-width: ${theme.style.layout.sizes.maxWidth};
 `
 export const Header = styled.header`
   position: fixed;
@@ -12,4 +15,7 @@ export const Header = styled.header`
   right: 0;
   height: 100px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
