@@ -6,6 +6,7 @@ import { ImageComponent } from '../components/imageComponents/ImageComponent'
 import { GalleryComponent } from '../components/imageComponents/GalleryComponent'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS } from '@contentful/rich-text-types'
+import { AboutProjectSection } from '../components/projectComponents/AboutProjectSection'
 
 const SlugPage = async ({ params }: { params: { slug: string } }) => {
   const projects = await fetchProjects()
@@ -31,27 +32,29 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
 
   if (project) {
     if (project.fields.gallery && project.fields.gallery.length > 0) {
-      project.fields.gallery.forEach((item: {
+      project.fields.gallery.forEach(
+        (item: {
           sys: {
             type: string
             linkType: string
             id: string
-          }; fields: {
+          }
+          fields: {
             title: string
             file: {
               url: string
             }
           }
         }) => {
-        galleryItems.push(item)
-      })
+          galleryItems.push(item)
+        }
+      )
     } else {
       console.log(`No gallery for project: ${project.fields.title}`)
     }
   } else {
     console.log(`Project with slug ${params.slug} not found`)
   }
-
 
   if (!project) {
     return <H1>No Post Found</H1>
@@ -76,10 +79,13 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
       {imageUrl && (
         <ImageComponent url={imageUrl} title={project.fields.title} />
       )}
-      <H1>{project.fields.title}</H1>
-      {project.fields.description &&
-        documentToReactComponents(project.fields.description, renderOptions)}
-
+      <AboutProjectSection
+        title={project.fields.title}
+        description={documentToReactComponents(
+          project.fields.description,
+          renderOptions
+        )}
+      />
       <GalleryComponent galleryItems={galleryItems} />
     </div>
   )

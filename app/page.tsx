@@ -1,7 +1,6 @@
 // import { fetchExample } from './utils/contentful/queries/home'
 
 import { Project } from './types/Types'
-import { PostComponent } from './components/PostComponent'
 // import { H1 } from './components/fontComponents/fonts'
 import {
   fetchDisplayProjectImagesWithDetails,
@@ -12,6 +11,7 @@ import { HeroComponent } from './components/homePageComponents/DisplayProjectsHe
 import { Main } from './components/baseComponents/base'
 import { AboutSection } from './components/homePageComponents/AboutSection'
 import { ContactSection } from './components/homePageComponents/ContactSection'
+import { ProjectSection } from './components/projectComponents/ProjectSection'
 
 export default async function Home() {
   // const responseExample = await fetchExample()
@@ -32,24 +32,7 @@ export default async function Home() {
       )} */}
       <HeroComponent displayProjects={displayProjects} />
       <AboutSection />
-      <div>
-        {projects.map((project: Project) => {
-          const thumbnailUrl = `https:${
-            project.fields.projectThumbnail?.fields.file.url || ''
-          }`
-          const title = project.fields.title || 'No Title'
-          const slug = project.fields.slug || 'no-slug'
-
-          return (
-            <PostComponent
-              key={project.sys.id}
-              title={title}
-              thumbnailUrl={thumbnailUrl}
-              slug={slug}
-            />
-          )
-        })}
-      </div>
+      <ProjectSection headLine={'Våra projekt'} projects={projects} />
       <ContactSection />
     </Main>
   )

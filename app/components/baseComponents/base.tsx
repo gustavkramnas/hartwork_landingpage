@@ -9,6 +9,7 @@ export const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 300px;
 `
 
 export const Container = styled.div`

@@ -13,7 +13,10 @@ export const theme = {
       fontFamily: 'Arial, sans-serif',
       headerSize: '24px',
       linkButtonWithArrowSize: '12px',
-      linkButtonWithArrowWeight: 'bold'
+      linkButtonWithArrowWeight: 'bold',
+      headLineSize: '21px',
+      paragraphSize: '12px',
+      paddingBottom: '12px'
     },
     layout: {
       sizes: {
@@ -23,7 +26,8 @@ export const theme = {
       desktopEdgePadding: '24x',
       mobileEdgePadding: '12px',
       buttonsPadding: '12px 24px',
-      buttonRadius: "100px"
+      buttonRadius: '100px',
+      gap: '12px'
     },
     graphicsRendering: {
       strokeWeight: '1px'
