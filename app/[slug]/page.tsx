@@ -10,6 +10,7 @@ import { BLOCKS } from '@contentful/rich-text-types'
 const SlugPage = async ({ params }: { params: { slug: string } }) => {
   const projects = await fetchProjects()
 
+  // Det här är för galleriet
   const galleryItems: Array<{
     sys: {
       type: string
@@ -51,8 +52,9 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
     }
   }
 
-  const imageUrl = project.fields.projectThumbnail?.fields.file.url
-    ? `https:${project.fields.projectThumbnail.fields.file.url}`
+  // Bild för Hero
+  const imageUrl = project.fields.displayProjectImage?.fields.file.url
+    ? `https:${project.fields.displayProjectImage.fields.file.url}`
     : ''
 
   return (

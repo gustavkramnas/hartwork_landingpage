@@ -9,6 +9,7 @@ import { ImageComponent } from './components/imageComponents/ImageComponent'
 export default async function Home() {
   const responseExample = await fetchExample()
 
+
   const imageUrl = `https:${
     responseExample.fields.image?.fields.file.url || ''
   }`
@@ -16,6 +17,8 @@ export default async function Home() {
   //console.log('posts:', posts)
 
   const projects = await fetchProjects()
+
+  console.log('projects:', projects)
 
   return (
     <>

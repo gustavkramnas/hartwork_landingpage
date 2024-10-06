@@ -82,6 +82,18 @@ export type Project = {
         }
       }
     }
+    displayProjectImage?: {
+      sys: {
+        type: string
+        linkType: string
+        id: string
+      }
+      fields: {
+        file: {
+          url: string
+        }
+      }
+    }
     description?: {
       content: Array<{
         nodeType: string
