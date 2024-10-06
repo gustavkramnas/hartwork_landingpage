@@ -12,9 +12,10 @@ const LinkButton = styled(Link)`
 
 const AppLinkButton = styled(Link)`
   text-decoration: none;
-  color: ${theme.style.colors.primary};
-  border: ${theme.style.graphicsRendering.strokeWeight} solid
-    ${theme.style.colors.primary};
+  color: ${theme.style.colors.tertiary};
+  background-color: ${theme.style.colors.secondary};
+  /* border: ${theme.style.graphicsRendering.strokeWeight} solid
+    ${theme.style.colors.primary}; */
   padding: ${theme.style.layout.buttonsPadding};
   border-radius: ${theme.style.layout.buttonRadius};
   display: flex;
@@ -113,7 +114,7 @@ export const AppButton = ({ href, title }: Props) => {
         <polyline
           fill="none"
           strokeMiterlimit="10"
-          stroke={theme.style.colors.primary}
+          stroke={theme.style.colors.tertiary}
           points="14.18 29.86 29.04 15 14.18 .14"
         />
       </svg>

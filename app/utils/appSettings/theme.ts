@@ -7,7 +7,8 @@ export const theme = {
   style: {
     colors: {
       primary: '#000000',
-      secondary: '#e2021b'
+      secondary: '#e2021b',
+      tertiary: '#ffffff'
     },
     font: {
       fontFamily: 'Arial, sans-serif',
@@ -21,7 +22,7 @@ export const theme = {
     layout: {
       sizes: {
         maxWidth: '1200px',
-        mobileQueries: '768px',
+        mobileQueries: '768px'
       },
       cardPadding: '12px',
       desktopEdgePadding: '24px',
