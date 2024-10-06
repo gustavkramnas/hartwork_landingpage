@@ -21,7 +21,12 @@ export const theme = {
       },
       cardPadding: '12px',
       desktopEdgePadding: '24x',
-      mobileEdgePadding: '12px'
+      mobileEdgePadding: '12px',
+      buttonsPadding: '12px 24px',
+      buttonRadius: "100px"
+    },
+    graphicsRendering: {
+      strokeWeight: '1px'
     }
   }
 }

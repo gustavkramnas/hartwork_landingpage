@@ -9,6 +9,9 @@ import {
 } from './utils/contentful/queries/project'
 // import { ImageComponent } from './components/imageComponents/ImageComponent'
 import { HeroComponent } from './components/homePageComponents/DisplayProjectsHero'
+import { Main } from './components/baseComponents/base'
+import { AboutSection } from './components/homePageComponents/AboutSection'
+import { ContactSection } from './components/homePageComponents/ContactSection'
 
 export default async function Home() {
   // const responseExample = await fetchExample()
@@ -21,13 +24,14 @@ export default async function Home() {
   const displayProjects = await fetchDisplayProjectImagesWithDetails()
 
   return (
-    <>
+    <Main>
       {/* {imageUrl ? (
         <ImageComponent url={imageUrl} title={responseExample.fields.title} />
       ) : (
         <H1>No image</H1>
       )} */}
       <HeroComponent displayProjects={displayProjects} />
+      <AboutSection />
       <div>
         {projects.map((project: Project) => {
           const thumbnailUrl = `https:${
@@ -46,6 +50,7 @@ export default async function Home() {
           )
         })}
       </div>
-    </>
+      <ContactSection />
+    </Main>
   )
 }
