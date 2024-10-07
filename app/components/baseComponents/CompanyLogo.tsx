@@ -9,18 +9,16 @@ import { theme } from '../../utils/appSettings/theme'
 //   companyName: string
 // }
 
-// type Props = {
-//   red: boolean
-//   white: boolean
-//   black: boolean
-// }
+type Props = {
+  white?: boolean
+}
 
 const LogoContainer = styled(Link)`
   position: relative;
   width: 200px;
 `
 
-export const CompanyLogo = () => {
+export const CompanyLogo = ({ white }: Props) => {
   return (
     <LogoContainer href="/">
       {/* <svg
@@ -41,7 +39,7 @@ export const CompanyLogo = () => {
       </svg> */}
 
       <svg
-        fill={theme.style.colors.primary}
+        fill={white ? theme.style.colors.tertiary : theme.style.colors.primary}
         id="Layer_1"
         xmlns="http://www.w3.org/2000/svg"
         width="200.08"

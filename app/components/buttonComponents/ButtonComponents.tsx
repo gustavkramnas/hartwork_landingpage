@@ -5,17 +5,17 @@ import Link from 'next/link'
 import { theme } from '@/app/utils/appSettings/theme'
 import { ButtonTitle, P } from '../fontComponents/fonts'
 const LinkButton = styled(Link)`
+  cursor: pointer;
   text-decoration: none;
   color: ${theme.style.colors.primary};
   display: grid;
 `
 
 const AppLinkButton = styled(Link)`
+  cursor: pointer;
   text-decoration: none;
   color: ${theme.style.colors.tertiary};
   background-color: ${theme.style.colors.secondary};
-  /* border: ${theme.style.graphicsRendering.strokeWeight} solid
-    ${theme.style.colors.primary}; */
   padding: ${theme.style.layout.buttonsPadding};
   border-radius: ${theme.style.layout.buttonRadius};
   display: flex;
@@ -107,8 +107,8 @@ export const AppButton = ({ href, title }: Props) => {
       <svg
         id="Layer_1"
         xmlns="http://www.w3.org/2000/svg"
-        width="29.04"
-        height="30"
+        width="20"
+        height="20"
         viewBox="0 0 29.04 30"
       >
         <polyline

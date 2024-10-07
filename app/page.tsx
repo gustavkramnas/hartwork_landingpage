@@ -8,15 +8,20 @@ import { Main } from './components/baseComponents/base'
 import { AboutSection } from './components/homePageComponents/AboutSection'
 import { ContactSection } from './components/baseComponents/ContactSection'
 import { ProjectSection } from './components/projectComponents/ProjectSection'
+import { fetchCompanyAppSetting } from './utils/contentful/queries/home'
 
 export default async function Home() {
   const projects: Project[] = await fetchProjects()
   const displayProjects = await fetchDisplayProjectImagesWithDetails()
+  const companyInfo = await fetchCompanyAppSetting()
 
   return (
     <Main>
       <HeroComponent displayProjects={displayProjects} />
-      <AboutSection />
+      <AboutSection
+        companyName={companyInfo.fields.companyName}
+        pitch={companyInfo.fields.shortDescription}
+      />
       <ProjectSection headLine={'Våra projekt'} projects={projects} />
       <ContactSection />
     </Main>

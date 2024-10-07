@@ -1,5 +1,4 @@
 'use client'
-
 import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import { H1 } from '../fontComponents/fonts'

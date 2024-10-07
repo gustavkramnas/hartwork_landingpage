@@ -1,12 +1,11 @@
 import { Section, Container } from '../baseComponents/base'
-import { H1, P } from '../fontComponents/fonts'
+import { ContactInfo } from '../baseComponents/ContactInfoComponent'
 
 export const ContactPageSection = () => {
   return (
     <Section>
       <Container>
-        <H1>Kontakt</H1>
-        <P>Lite text</P>
+        <ContactInfo allInfo />
       </Container>
     </Section>
   )

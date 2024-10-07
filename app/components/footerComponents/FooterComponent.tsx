@@ -1,23 +1,23 @@
-'use client'
-import styled from 'styled-components'
 import { theme } from '../../utils/appSettings/theme'
-import { H1 } from '../fontComponents/fonts'
 import { Container, Section } from '../baseComponents/base'
-
-const FooterWrapper = styled.footer`
-  margin: 0;
-  padding: 0;
-  background: ${theme.style.colors.secondary};
-`
+import { ContactInfo } from '../baseComponents/ContactInfoComponent'
+import { CompanyLogo } from '../baseComponents/CompanyLogo'
 
 export const Footer = () => {
   return (
-    <FooterWrapper>
+    <footer
+      style={{
+        margin: 0,
+        padding: 0,
+        background: theme.style.colors.secondary
+      }}
+    >
       <Section>
         <Container>
-          <H1>Kontakt</H1>
+          <CompanyLogo white />
+          <ContactInfo />
         </Container>
       </Section>
-    </FooterWrapper>
+    </footer>
   )
 }

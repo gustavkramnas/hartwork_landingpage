@@ -1,13 +1,18 @@
 'use client'
 import { Container, Section } from '../baseComponents/base'
-import { H1, P } from '../fontComponents/fonts'
+import { H1, P_L } from '../fontComponents/fonts'
 
-export const AboutSection = () => {
+type Props = {
+  companyName: string
+  pitch: string
+}
+
+export const AboutSection = ({ companyName, pitch }: Props) => {
   return (
     <Section>
       <Container>
-        <H1>Om Hartwork</H1>
-        <P>Hartwork pitch</P>
+        <H1>{companyName}</H1>
+        <P_L>{pitch}</P_L>
       </Container>
     </Section>
   )

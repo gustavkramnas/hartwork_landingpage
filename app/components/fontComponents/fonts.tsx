@@ -2,6 +2,10 @@
 import { theme } from '@/app/utils/appSettings/theme'
 import styled from 'styled-components'
 
+type Props = {
+  $white?: boolean
+}
+
 export const H1 = styled.h2`
   margin: 0;
   padding: 0;
@@ -34,4 +38,9 @@ export const ButtonTitle = styled(P)`
 `
 export const P_L = styled(P)`
   font-size: ${theme.style.font.paragraphLarger};
+`
+export const A = styled.a<Props>`
+  text-decoration: none;
+  color: ${(props) =>
+    props.$white ? theme.style.colors.tertiary : theme.style.colors.primary};
 `
