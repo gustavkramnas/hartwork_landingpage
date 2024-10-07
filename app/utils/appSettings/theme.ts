@@ -17,7 +17,8 @@ export const theme = {
       linkButtonWithArrowWeight: 'bold',
       headLineSize: '21px',
       paragraphSize: '12px',
-      paddingBottom: '12px'
+      paddingBottom: '12px',
+      paragraphLarger: '16px'
     },
     layout: {
       sizes: {

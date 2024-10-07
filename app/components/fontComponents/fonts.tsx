@@ -32,3 +32,6 @@ export const ButtonTitle = styled(P)`
   font-size: ${theme.style.font.linkButtonWithArrowSize};
   font-weight: ${theme.style.font.linkButtonWithArrowWeight};
 `
+export const P_L = styled(P)`
+  font-size: ${theme.style.font.paragraphLarger};
+`

@@ -1,13 +1,25 @@
-import { Section, Container } from "../baseComponents/base"
-import { H1, P } from "../fontComponents/fonts"
+'use client'
+import styled from 'styled-components'
+import { Section, Container } from '../baseComponents/base'
+import { H1, P_L } from '../fontComponents/fonts'
+import { theme } from '@/app/utils/appSettings/theme'
 
-export const AboutCompany = () => {
-  
+type Props = {
+  info: string
+}
+
+const ContactContainer = styled.div`
+  max-width: calc(${theme.style.layout.sizes.maxWidth} / 2);
+`
+
+export const AboutCompany = ({ info }: Props) => {
   return (
     <Section>
       <Container>
-        <H1>Om Hartwork</H1>
-        <P>Hartwork är en digital byrå som skapar webbplatser och appar som är snygga, användarvänliga och effektiva. Vi har en passion för att skapa digitala lösningar som gör skillnad. Vi är specialister på att skapa webbplatser och appar som är snygga, användarvänliga och effektiva. Vi har en passion för att skapa digitala lösningar som gör skillnad.</P>
+        <H1>Hartwork</H1>
+        <ContactContainer>
+          <P_L>{info}</P_L>
+        </ContactContainer>
       </Container>
     </Section>
   )
