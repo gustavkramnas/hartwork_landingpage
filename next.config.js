@@ -9,11 +9,12 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'images.ctfassets.net',
-        pathname: '/**', // Tillåt alla vägar under denna domän
+        protocol: "https",
+        hostname: "images.ctfassets.net",
+        pathname: "/**", // Tillåt alla vägar under denna domän
       },
     ],
+    domains: ["downloads.ctfassets.net"],
   },
 };
 
