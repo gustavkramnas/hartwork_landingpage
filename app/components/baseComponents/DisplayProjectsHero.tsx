@@ -18,7 +18,22 @@ type Props = {
 
 const Wrapper = styled.div`
   position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 `
+
+const ImageWrapper = styled.div<{ isVisible: boolean }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transition: opacity 1s ease-in-out;
+  z-index: ${(props) => (props.isVisible ? 1 : 0)};
+`
+
 const ProjectInformationWrapper = styled.div`
   position: absolute;
   bottom: 0;
@@ -41,25 +56,34 @@ const ProjectInformation = styled.div`
 
 export const HeroComponent = ({ displayProjects }: Props) => {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
+  const [previousProjectIndex, setPreviousProjectIndex] = useState<number | null>(null)
 
   useEffect(() => {
     const intervalId = setInterval(() => {
+      setPreviousProjectIndex(currentProjectIndex)
       setCurrentProjectIndex(
         (prevIndex) => (prevIndex + 1) % displayProjects.length
       )
     }, 5000)
 
     return () => clearInterval(intervalId)
-  }, [displayProjects.length])
+  }, [currentProjectIndex, displayProjects.length])
 
   return (
     <div>
       {displayProjects.length > 0 ? (
         <Wrapper>
-          <ImageComponent
-            url={displayProjects[currentProjectIndex].imageUrl}
-            title={displayProjects[currentProjectIndex].title}
-          />
+          {displayProjects.map((project, index) => (
+            <ImageWrapper
+              key={project.slug}
+              isVisible={index === currentProjectIndex}
+            >
+              <ImageComponent
+                url={project.imageUrl}
+                title={project.title}
+              />
+            </ImageWrapper>
+          ))}
           <ProjectInformationWrapper>
             <ProjectInformation>
               <ArrowButton
