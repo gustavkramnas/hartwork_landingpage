@@ -22,7 +22,7 @@ export default async function Home() {
         companyName={companyInfo.fields.companyName}
         pitch={companyInfo.fields.shortDescription}
       />
-      <ProjectSection headLine={'Våra projekt'} projects={projects} />
+      <ProjectSection headLine={'Nåra av våra projekt'} projects={projects} />
       <ContactSection />
     </Main>
   )
