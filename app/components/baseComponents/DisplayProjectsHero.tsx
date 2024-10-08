@@ -30,7 +30,7 @@ const ImageWrapper = styled.div<{ isVisible: boolean }>`
   width: 100%;
   height: 100%;
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transition: opacity 1s ease-in-out;
+  transition: opacity 4s ease-in-out;
   z-index: ${(props) => (props.isVisible ? 1 : 0)};
 `
 
@@ -64,7 +64,7 @@ export const HeroComponent = ({ displayProjects }: Props) => {
       setCurrentProjectIndex(
         (prevIndex) => (prevIndex + 1) % displayProjects.length
       )
-    }, 5000)
+    }, 8000)
 
     return () => clearInterval(intervalId)
   }, [currentProjectIndex, displayProjects.length])
