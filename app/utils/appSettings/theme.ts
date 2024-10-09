@@ -33,7 +33,7 @@ export const theme = {
       buttonRadius: '100px',
       gap: '12px',
       desktopPaddingTop: '180px',
-      mobilePaddingTop: '20px'
+      mobilePaddingTop: '80px'
     },
     graphicsRendering: {
       strokeWeight: '1px'

@@ -23,15 +23,31 @@ export const Header = styled.header<Props>`
   z-index: 1000;
   left: 0;
   right: 0;
-  padding: ${({ $scrolled }) => ($scrolled ? '5px 0' : '70px 0 20px 0')};
-  background-color: ${({ $scrolled }) =>
-    $scrolled ? `${theme.style.colors.tertiary}` : 'transparent'};
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.6s;
-  &:hover {
+
+  @media (min-width: ${theme.style.layout.sizes.mobileQueries}) {
+    padding: ${({ $scrolled }) => ($scrolled ? '5px 0' : '70px 0 20px 0')};
+    background-color: ${({ $scrolled }) =>
+      $scrolled ? `${theme.style.colors.tertiary}` : 'transparent'};
+    transition: 0.6s;
+    &:hover {
+      background-color: ${theme.style.colors.tertiary};
+    }
+  }
+
+  @media (max-width: ${theme.style.layout.sizes.mobileQueries}) {
     background-color: ${theme.style.colors.tertiary};
+    padding-top: 8px;
+  }
+`
+export const MobileButtonContainer = styled.div`
+  display: none;
+  @media (max-width: ${theme.style.layout.sizes.mobileQueries}) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `

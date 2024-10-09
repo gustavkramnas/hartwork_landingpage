@@ -10,13 +10,18 @@ const PageList = styled.ul`
   display: flex;
   gap: 1rem;
   transition: 0.6s;
+  @media (max-width: ${theme.style.layout.sizes.mobileQueries}) {
+    display: none;
+  }
 `
 
 const ListItem = styled.li`
   text-decoration: none;
-  transition: 0.6s;
-  :hover {
-    border-bottom: 1px solid ${theme.style.colors.secondary};
+  @media (min-width: ${theme.style.layout.sizes.mobileQueries}) {
+    transition: 0.6s;
+    :hover {
+      border-bottom: 1px solid ${theme.style.colors.secondary};
+    }
   }
 `
 

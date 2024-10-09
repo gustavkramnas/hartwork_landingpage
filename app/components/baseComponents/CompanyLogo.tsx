@@ -2,12 +2,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 import { theme } from '../../utils/appSettings/theme'
-// import Image from 'next/image'
-
-// type Props = {
-//   imageUrl: string
-//   companyName: string
-// }
 
 type Props = {
   white?: boolean
@@ -23,6 +17,7 @@ export const CompanyLogo = ({ white, $scrolled }: Props) => {
   return (
     <LogoContainer href="/">
       {$scrolled ? (
+        // no undertitle
         <svg
           fill={theme.style.colors.primary}
           id="Layer_1"
@@ -85,13 +80,6 @@ export const CompanyLogo = ({ white, $scrolled }: Props) => {
         </svg>
       )}
 
-      {/* <Image
-        src={imageUrl}
-        alt={companyName}
-        priority
-        fill
-        style={{ objectFit: 'cover' }}
-      /> */}
     </LogoContainer>
   )
 }
