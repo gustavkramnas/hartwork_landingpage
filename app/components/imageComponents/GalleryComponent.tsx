@@ -1,11 +1,9 @@
-import React from 'react'
 import { GalleryImageComponent } from './GalleryImageComponent'
 import { GalleryComponentProps } from '@/app/types/Types'
 import { GalleryContainer, GalleryItem } from './StyledComponents'
+import { VideoComponent } from './VideoComponent'
 
-export const GalleryComponent: React.FC<GalleryComponentProps> = ({
-  galleryItems
-}) => {
+export const GalleryComponent = ({ galleryItems }: GalleryComponentProps) => {
   return (
     <GalleryContainer>
       {galleryItems.map((item, index) => (
@@ -14,6 +12,7 @@ export const GalleryComponent: React.FC<GalleryComponentProps> = ({
             url={`https:${item.fields.file.url}`}
             title={item.fields.title}
           />
+          {/* <VideoComponent url={`https:${item.fields.file.url}`} /> */}
         </GalleryItem>
       ))}
     </GalleryContainer>
