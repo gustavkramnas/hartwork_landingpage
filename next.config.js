@@ -4,18 +4,18 @@
 const nextConfig = {
   reactStrictMode: true,
   compiler: {
-    styledComponents: true,
+    styledComponents: true
   },
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "images.ctfassets.net",
-        pathname: "/**", // Tillåt alla vägar under denna domän
-      },
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        pathname: '/**'
+      }
     ],
-    domains: ["downloads.ctfassets.net"],
-  },
-};
+    domains: ['downloads.ctfassets.net', 'videos.ctfassets.net']
+  }
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

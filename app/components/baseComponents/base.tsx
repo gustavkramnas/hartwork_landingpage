@@ -3,7 +3,7 @@ import { theme } from '@/app/utils/appSettings/theme'
 import styled from 'styled-components'
 
 export const Main = styled.main`
-  min-height: 100vh;
+  min-height: 80vh;
 `
 
 export const MainWithPaddingTop = styled(Main)`

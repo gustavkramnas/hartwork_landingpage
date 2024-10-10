@@ -34,7 +34,7 @@ export const theme = {
       gap: '12px',
       desktopPaddingTop: '180px',
       mobilePaddingTop: '80px',
-      mobileContainerNavPadding: '60px',
+      mobileContainerNavPadding: '60px'
     },
     graphicsRendering: {
       strokeWeight: '1px'
