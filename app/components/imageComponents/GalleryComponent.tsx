@@ -1,20 +1,21 @@
 import React from 'react'
-import { ImageComponent } from './ImageComponent'
+import { GalleryImageComponent } from './GalleryImageComponent'
 import { GalleryComponentProps } from '@/app/types/Types'
+import { GalleryContainer, GalleryItem } from './StyledComponents'
 
 export const GalleryComponent: React.FC<GalleryComponentProps> = ({
   galleryItems
 }) => {
   return (
-    <div>
+    <GalleryContainer>
       {galleryItems.map((item, index) => (
-        <div key={index}>
-          <ImageComponent
+        <GalleryItem key={index}>
+          <GalleryImageComponent
             url={`https:${item.fields.file.url}`}
             title={item.fields.title}
           />
-        </div>
+        </GalleryItem>
       ))}
-    </div>
+    </GalleryContainer>
   )
 }
