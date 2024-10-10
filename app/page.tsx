@@ -9,6 +9,7 @@ import { AboutSection } from './components/homePageComponents/AboutSection'
 import { ContactSection } from './components/baseComponents/ContactSection'
 import { ProjectSection } from './components/projectComponents/ProjectSection'
 import { fetchCompanyAppSetting } from './utils/contentful/queries/home'
+import { PartnerComponent } from './components/partnersComponent/PartnerComponent'
 
 export default async function Home() {
   const projects: Project[] = await fetchProjects()
@@ -22,6 +23,7 @@ export default async function Home() {
         companyName={companyInfo.fields.companyName}
         pitch={companyInfo.fields.shortDescription}
       />
+      <PartnerComponent />
       <ProjectSection headLine={'Nåra av våra projekt'} projects={projects} />
       <ContactSection />
     </Main>

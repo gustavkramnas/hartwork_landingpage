@@ -9,10 +9,20 @@ const PageList = styled.ul`
   list-style: none;
   display: flex;
   gap: 1rem;
+  transition: 0.6s;
+  @media (max-width: ${theme.style.layout.sizes.mobileQueries}) {
+    display: none;
+  }
 `
 
 const ListItem = styled.li`
   text-decoration: none;
+  @media (min-width: ${theme.style.layout.sizes.mobileQueries}) {
+    transition: 0.6s;
+    :hover {
+      border-bottom: 1px solid ${theme.style.colors.secondary};
+    }
+  }
 `
 
 const PageLink = styled(Link)`
@@ -20,6 +30,8 @@ const PageLink = styled(Link)`
   color: ${theme.style.colors.primary};
   font-weight: 600;
   font-family: ${theme.style.font.fontFamily};
+  padding: 5px 10px;
+  transition: 0.6s;
 `
 
 export const PageLinksContainer = () => {

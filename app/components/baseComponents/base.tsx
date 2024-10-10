@@ -29,3 +29,8 @@ export const Container = styled.div`
   width: 100%;
   max-width: ${theme.style.layout.sizes.maxWidth};
 `
+export const ItemsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+  gap: ${theme.style.layout.gap};
+`
