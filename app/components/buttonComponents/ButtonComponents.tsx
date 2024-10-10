@@ -19,6 +19,7 @@ const LinkButton = styled(Link)`
   text-decoration: none;
   color: ${theme.style.colors.primary};
   display: grid;
+  gap: 5px;
 `
 
 const AppLinkButton = styled(Link)`
@@ -116,7 +117,7 @@ export const ArrowButton = ({ href, title }: Props) => {
 export const AppButton = ({ href, title }: Props) => {
   return (
     <AppLinkButton href={href}>
-      <P>{title}</P>
+      <P $white>{title}</P>
       <svg
         id="Layer_1"
         xmlns="http://www.w3.org/2000/svg"

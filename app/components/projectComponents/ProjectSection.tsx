@@ -1,23 +1,28 @@
 'use client'
 import styled from 'styled-components'
-import { Container, ItemsContainer, Section } from '../baseComponents/base'
-import { H2 } from '../fontComponents/fonts'
+import { Container, Section } from '../baseComponents/base'
+import { H2} from '../fontComponents/fonts'
 import { Project } from '@/app/types/Types'
 import { ProjectThumbnailComponent } from './ProjectThumbnailComponent'
-// import { theme } from '@/app/utils/appSettings/theme'
+import { theme } from '@/app/utils/appSettings/theme'
 
 type Props = {
   headLine: string
   projects: Project[]
 }
+const ItemsContainer = styled.div`
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 200px)); */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: ${theme.style.layout.gap};
+`
 
-// const ProjectsContainer = styled.div`
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
-//   gap: ${theme.style.layout.gap};
-// `
-
-const ProjectItem = styled.div``
+const ProjectItem = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+`
 
 export const ProjectSection = ({ headLine, projects }: Props) => {
   return (
