@@ -23,9 +23,9 @@ export default async function Home() {
         companyName={companyInfo.fields.companyName}
         pitch={companyInfo.fields.shortDescription}
       />
-      <PartnerComponent />
       <ProjectSection headLine={'Några av våra projekt'} projects={projects} />
       <ContactSection />
+      <PartnerComponent />
     </Main>
   )
 }

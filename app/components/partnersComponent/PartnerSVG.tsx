@@ -1,6 +1,6 @@
 import { theme } from '@/app/utils/appSettings/theme'
 
-const size = 150
+const size = 250
 const color = theme.style.colors.primary
 
 export const PartnerSVG = {
