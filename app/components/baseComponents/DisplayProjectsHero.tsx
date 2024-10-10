@@ -18,7 +18,21 @@ type Props = {
 
 const Wrapper = styled.div`
   position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 `
+
+const ImageWrapper = styled.div<{ $isVisible: boolean }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: ${(props) => (props.$isVisible ? 1 : 0)};
+  transition: opacity 4s ease-in-out;
+`
+
 const ProjectInformationWrapper = styled.div`
   position: absolute;
   bottom: 0;
@@ -56,10 +70,14 @@ export const HeroComponent = ({ displayProjects }: Props) => {
     <div>
       {displayProjects.length > 0 ? (
         <Wrapper>
-          <ImageComponent
-            url={displayProjects[currentProjectIndex].imageUrl}
-            title={displayProjects[currentProjectIndex].title}
-          />
+          {displayProjects.map((project, index) => (
+            <ImageWrapper
+              key={project.slug}
+              $isVisible={index === currentProjectIndex}
+            >
+              <ImageComponent url={project.imageUrl} title={project.title} />
+            </ImageWrapper>
+          ))}
           <ProjectInformationWrapper>
             <ProjectInformation>
               <ArrowButton
@@ -75,7 +93,6 @@ export const HeroComponent = ({ displayProjects }: Props) => {
     </div>
   )
 }
-
 
 // 'use client'
 // import styled from 'styled-components'
