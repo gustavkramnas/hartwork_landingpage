@@ -1,16 +1,19 @@
 import { fetchCompanyAppSetting } from '@/app/utils/contentful/queries/home'
-import { A, H1, P_L } from '../fontComponents/fonts'
+import { A, P_L } from '../fontComponents/fonts'
+import { CompanyLogo } from '../baseComponents/CompanyLogo' // Importera din logokomponent
 
 type Props = {
   allInfo?: boolean
 }
+
 export const ContactInfo = async ({ allInfo }: Props) => {
   const contactInfo = await fetchCompanyAppSetting()
+  
   return (
     <>
       {allInfo && (
         <>
-          <H1>{contactInfo.fields.companyName}</H1>
+          <CompanyLogo white={false} $scrolled={false} />
           <P_L>{contactInfo.fields.contactPerson}</P_L>
           <P_L>
             <A href={`tel:${contactInfo.fields.phoneNumber}`}>
