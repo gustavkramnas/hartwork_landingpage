@@ -33,9 +33,10 @@ export const PhotoGalleryImageContainer = styled.div`
   width: 100%;
   height: 300px;
   transition: 0, 6s all;
+  display: flex;
 `
 export const PhotoGalleryContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: ${theme.style.layout.gap};
 `

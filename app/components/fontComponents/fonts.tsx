@@ -33,8 +33,16 @@ export const P = styled.p<Props>`
   font-size: ${theme.style.font.paragraphSize};
   color: ${(props) =>
     props.$white ? theme.style.colors.tertiary : theme.style.colors.primary};
-    line-height: ${theme.style.font.paragraphLineHeight};
+  line-height: ${theme.style.font.paragraphLineHeight};
 `
+export const SmallP = styled(P)`
+  font-size: ${theme.style.font.smallParagraphSize};
+`
+
+export const ProjectP = styled(P)`
+  font-size: ${theme.style.font.smallParagraphSize};
+`
+
 export const ButtonTitle = styled(P)`
   font-size: ${theme.style.font.linkButtonWithArrowSize};
   font-weight: ${theme.style.font.linkButtonWithArrowWeight};

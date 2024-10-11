@@ -1,6 +1,6 @@
 'use client'
 import { Container, Section } from '../baseComponents/base'
-import { H1, P_L } from '../fontComponents/fonts'
+import { H1, P} from '../fontComponents/fonts'
 
 type Props = {
   companyName: string
@@ -12,7 +12,7 @@ export const AboutSection = ({ companyName, pitch }: Props) => {
     <Section>
       <Container>
         <H1>{companyName}</H1>
-        <P_L>{pitch}</P_L>
+        <P>{pitch}</P>
       </Container>
     </Section>
   )

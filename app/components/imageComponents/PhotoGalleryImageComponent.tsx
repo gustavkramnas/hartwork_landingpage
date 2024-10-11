@@ -10,7 +10,7 @@ export const PhotoGalleryImageComponent = ({ url, title }: ImageProps) => {
         src={url}
         alt={title || 'Alt text'}
         fill
-        sizes="300px"
+        sizes="250px"
         priority
         style={{ objectFit: 'contain' }}
       />

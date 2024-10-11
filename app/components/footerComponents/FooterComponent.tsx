@@ -3,7 +3,7 @@ import { Container, Section } from '../baseComponents/base'
 import { ContactInfo } from '../baseComponents/ContactInfoComponent'
 import { CompanyLogo } from '../baseComponents/CompanyLogo'
 import { FlexContainer } from './StyledComponent'
-import { P } from '../fontComponents/fonts'
+import { SmallP } from '../fontComponents/fonts'
 
 export const Footer = () => {
   const year = new Date().getFullYear()
@@ -22,7 +22,7 @@ export const Footer = () => {
               <CompanyLogo white />
               <ContactInfo />
             </div>
-            <P $white>{year}</P>
+            <SmallP $white>{year}</SmallP>
           </FlexContainer>
         </Container>
       </Section>

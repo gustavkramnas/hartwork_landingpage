@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
 import { OnePost } from '@/app/types/Types'
-import { H1, P } from '../fontComponents/fonts'
+import { H1, ProjectP } from '../fontComponents/fonts'
 import { theme } from '@/app/utils/appSettings/theme'
 
 const ThumbnailContainer = styled.div`
@@ -55,7 +55,7 @@ export const ProjectThumbnailComponent = ({
             />
           </ThumbnailContainer>
           <ThumbnailTitle>
-            <P $white>{title}</P>
+            <ProjectP $white>{title}</ProjectP>
           </ThumbnailTitle>
         </ItemContainer>
       ) : (
