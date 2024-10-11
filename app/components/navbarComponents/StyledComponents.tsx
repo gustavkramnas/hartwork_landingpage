@@ -30,6 +30,10 @@ export const Header = styled.header<Props>`
 
   @media (min-width: ${theme.style.layout.sizes.mobileQueries}) {
     padding: ${({ $scrolled }) => ($scrolled ? '5px 0' : '70px 0 20px 0')};
+    box-shadow: ${({ $scrolled }) =>
+      $scrolled
+        ? 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px'
+        : 'none'};
     background-color: ${({ $scrolled }) =>
       $scrolled ? `${theme.style.colors.tertiary}` : 'transparent'};
     transition: 0.6s;

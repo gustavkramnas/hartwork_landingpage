@@ -1,9 +1,16 @@
 import type { Metadata } from 'next'
+import { Manrope } from 'next/font/google'
 import './globals.css'
 import { HeaderComponent } from './components/navbarComponents/HeaderComponent'
 import { Footer } from './components/footerComponents/FooterComponent'
 import { theme } from './utils/appSettings/theme'
 import StyledComponentsRegistry from './lib/registry'
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700', '800'], // Du kan specificera vikter här
+  display: 'swap'
+})
 
 export const metadata: Metadata = {
   title: theme.company,
@@ -16,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={manrope.className}>
       <StyledComponentsRegistry>
         <body>
           <HeaderComponent />

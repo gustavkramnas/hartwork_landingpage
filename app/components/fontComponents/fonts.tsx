@@ -26,11 +26,14 @@ export const H3 = styled.h3`
   font-family: ${theme.style.font.fontFamily};
   font-size: ${theme.style.font.headLineSize};
 `
-export const P = styled.p`
+export const P = styled.p<Props>`
   margin: 0;
   padding: 0;
   font-family: ${theme.style.font.fontFamily};
   font-size: ${theme.style.font.paragraphSize};
+  color: ${(props) =>
+    props.$white ? theme.style.colors.tertiary : theme.style.colors.primary};
+    line-height: ${theme.style.font.paragraphLineHeight};
 `
 export const ButtonTitle = styled(P)`
   font-size: ${theme.style.font.linkButtonWithArrowSize};

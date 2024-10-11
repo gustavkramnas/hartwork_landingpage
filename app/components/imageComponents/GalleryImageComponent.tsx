@@ -1,0 +1,18 @@
+'use client'
+import Image from 'next/image'
+import { ImageContainer } from './StyledComponents'
+import { ImageProps } from '@/app/types/Types'
+
+export const GalleryImageComponent = ({ url, title }: ImageProps) => {
+  return (
+    <ImageContainer>
+      <Image
+        src={url}
+        alt={title || 'Alt text'}
+        fill
+        priority
+        style={{ objectFit: 'contain' }}
+      />
+    </ImageContainer>
+  )
+}

@@ -31,18 +31,39 @@ export const fetchDisplayProjectImages = async (): Promise<string[]> => {
 export const fetchDisplayProjectImagesWithDetails = async (): Promise<
   { imageUrl: string; slug: string; title: string }[]
 > => {
-  const projects = await fetchProjects()
+  try {
+    const projects: Project[] = await fetchProjects(); // Om fetchProjects returnerar en Project[]
 
-  return projects
-    .filter(
-      (project: Project) => project.fields.displayProjectImage !== undefined
-    )
-    .map((project: Project) => ({
-      imageUrl: `https:${project.fields.displayProjectImage?.fields.file.url}`,
-      slug: project.fields.slug || 'no-slug',
-      title: project.fields.title || 'No Title'
-    }))
-}
+    return projects
+      .filter(
+        (project: Project) => project.fields.displayProjectImage !== undefined
+      )
+      .map((project: Project) => ({
+        imageUrl: `https:${project.fields.displayProjectImage?.fields?.file?.url || ''}`,
+        slug: project.fields.slug || 'no-slug',
+        title: project.fields.title || 'No Title',
+      }));
+  } catch (error) {
+    console.error('Error fetching projects:', error);
+    return [];
+  }
+};
+
+// export const fetchDisplayProjectImagesWithDetails = async (): Promise<
+//   { imageUrl: string; slug: string; title: string }[]
+// > => {
+//   const projects = await fetchProjects()
+
+//   return projects
+//     .filter(
+//       (project: Project) => project.fields.displayProjectImage !== undefined
+//     )
+//     .map((project: Project) => ({
+//       imageUrl: `https:${project.fields.displayProjectImage?.fields.file.url}`,
+//       slug: project.fields.slug || 'no-slug',
+//       title: project.fields.title || 'No Title'
+//     }))
+// }
 
 // import ContentfulClient from '../client'
 
