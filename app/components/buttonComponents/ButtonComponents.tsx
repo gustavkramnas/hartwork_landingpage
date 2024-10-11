@@ -20,6 +20,15 @@ const LinkButton = styled(Link)`
   color: ${theme.style.colors.primary};
   display: grid;
   gap: 5px;
+  transition: color 0.5s ease-in-out, stroke 0.5s ease-in-out;
+  &:hover {
+    color: ${theme.style.colors.tertiary};
+    & * {
+      color: ${theme.style.colors.tertiary};
+      stroke: ${theme.style.colors.tertiary};
+    }
+  }
+  max-width: 400px;
 `
 
 const AppLinkButton = styled(Link)`
@@ -33,7 +42,8 @@ const AppLinkButton = styled(Link)`
   justify-content: center;
   align-items: center;
   max-width: 100px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   transition: transform 0.2s;
   &:hover {
     transform: translateY(-3px);

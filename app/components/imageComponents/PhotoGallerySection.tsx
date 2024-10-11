@@ -1,5 +1,5 @@
 import { GalleryComponentProps } from '@/app/types/Types'
-import { PhotoGalleryContainer } from './StyledComponents'
+import { PhotoGalleryContainer, PhotoGalleryImageContainer } from './StyledComponents'
 import { VideoComponent } from './VideoComponent'
 import { H1, P } from '../fontComponents/fonts'
 import { Container, Section } from '../baseComponents/base'
@@ -32,7 +32,9 @@ export const PhotoGallerySection = ({
                     title={item.fields.title}
                   />
                 ) : isVideoFile(fileUrl) ? (
-                  <VideoComponent url={fileUrl} />
+                  <PhotoGalleryImageContainer>
+                    <VideoComponent url={fileUrl} />
+                  </PhotoGalleryImageContainer>
                 ) : (
                   <P $white>Unsupported file type</P>
                 )}
