@@ -72,7 +72,6 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
     }
   }
 
-  // Bild för Hero
   const imageUrl = project.fields.displayProjectImage?.fields.file.url
     ? `https:${project.fields.displayProjectImage.fields.file.url}`
     : ''

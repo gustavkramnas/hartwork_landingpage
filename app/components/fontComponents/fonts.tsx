@@ -33,6 +33,7 @@ export const P = styled.p<Props>`
   font-size: ${theme.style.font.paragraphSize};
   color: ${(props) =>
     props.$white ? theme.style.colors.tertiary : theme.style.colors.primary};
+    line-height: ${theme.style.font.paragraphLineHeight};
 `
 export const ButtonTitle = styled(P)`
   font-size: ${theme.style.font.linkButtonWithArrowSize};

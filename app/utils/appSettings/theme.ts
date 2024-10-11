@@ -11,14 +11,15 @@ export const theme = {
       tertiary: '#ffffff'
     },
     font: {
-      fontFamily: 'Arial, sans-serif',
+      fontFamily: `'Manrope', sans-serif`,
       headerSize: '24px',
       linkButtonWithArrowSize: '12px',
       linkButtonWithArrowWeight: 'bold',
       headLineSize: '21px',
       paragraphSize: '12px',
       paddingBottom: '12px',
-      paragraphLarger: '16px'
+      paragraphLarger: '16px',
+      paragraphLineHeight: '1.5',
     },
     layout: {
       sizes: {

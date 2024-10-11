@@ -3,7 +3,7 @@ import {
   fetchDisplayProjectImagesWithDetails,
   fetchProjects
 } from './utils/contentful/queries/project'
-import { HeroComponent } from './components/baseComponents/DisplayProjectsHero'
+import { HeroComponent } from './components/imageComponents/DisplayProjectsHero'
 import { Main } from './components/baseComponents/base'
 import { AboutSection } from './components/homePageComponents/AboutSection'
 import { ContactSection } from './components/baseComponents/ContactSection'

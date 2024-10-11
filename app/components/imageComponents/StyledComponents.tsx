@@ -7,6 +7,7 @@ export const LargeContainer = styled.div`
   width: 100%;
   height: 100vh;
   transition: 0, 6s all;
+  opacity: 0.8;
 `
 export const ThumbnailContainer = styled.div`
   position: relative;
