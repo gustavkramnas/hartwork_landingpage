@@ -19,7 +19,7 @@ export const PhotoGallerySection = ({
   return (
     <Section>
       <Container>
-        <H1>Mer bilder</H1>
+        <H1>Annan Art</H1>
         <PhotoGalleryContainer>
           {galleryItems.map((item, index) => {
             const fileUrl = `https:${item.fields.file.url}`
