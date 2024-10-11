@@ -49,6 +49,7 @@ export const ProjectThumbnailComponent = ({
               src={thumbnailUrl}
               alt={title || 'thumbnail'}
               fill
+              sizes="100%"
               priority
               style={{ objectFit: 'cover' }}
             />

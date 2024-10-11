@@ -10,11 +10,14 @@ import { ContactSection } from './components/baseComponents/ContactSection'
 import { ProjectSection } from './components/projectComponents/ProjectSection'
 import { fetchCompanyAppSetting } from './utils/contentful/queries/home'
 import { PartnerComponent } from './components/partnersComponent/PartnerComponent'
+import { fetchPhotGallery } from './utils/contentful/queries/photoGallery'
+import { PhotoGallerySection } from './components/imageComponents/PhotoGallerySection'  
 
 export default async function Home() {
   const projects: Project[] = await fetchProjects()
   const displayProjects = await fetchDisplayProjectImagesWithDetails()
   const companyInfo = await fetchCompanyAppSetting()
+  const gallery = await fetchPhotGallery()
 
   return (
     <Main>
@@ -25,6 +28,8 @@ export default async function Home() {
       />
       <ProjectSection headLine={'Några av våra projekt'} projects={projects} />
       <ContactSection />
+      <PhotoGallerySection galleryItems={gallery.fields.gallery} />
+
       <PartnerComponent />
     </Main>
   )

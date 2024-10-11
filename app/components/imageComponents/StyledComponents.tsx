@@ -27,3 +27,15 @@ export const GalleryContainer = styled.div`
 export const GalleryItem = styled.div`
   padding: ${theme.style.layout.gap} 0;
 `
+
+export const PhotoGalleryImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 300px;
+  transition: 0, 6s all;
+`
+export const PhotoGalleryContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: ${theme.style.layout.gap};
+`
