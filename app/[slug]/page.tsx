@@ -11,7 +11,7 @@ import { extractGalleryItems } from "../utils/helpers/galleryHelpers"
 import { Main } from "../components/baseComponents/base"
 import { ImageComponent } from "../components/imageComponents/ImageComponent"
 
-export const SlugPage = async ({ params }: { params: { slug: string } }) => {
+const Page = async ({ params }: { params: { slug: string } }) => {
   const projects = await fetchProjects()
   const project = projects.find(
     (project: Project) => project.fields.slug === params.slug
@@ -45,3 +45,5 @@ export const SlugPage = async ({ params }: { params: { slug: string } }) => {
     </Main>
   )
 }
+
+export default Page

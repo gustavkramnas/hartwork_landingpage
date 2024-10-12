@@ -6,7 +6,7 @@ import { PartnerComponent } from '../components/partnersComponent/PartnerCompone
 import { fetchCompanyAppSetting } from '../utils/contentful/queries/home'
 import { fetchDisplayProjectImagesWithDetails } from '../utils/contentful/queries/project'
 
-export const Page = async () => {
+const Page = async () => {
   const displayProjects = await fetchDisplayProjectImagesWithDetails()
   const contactInfo = await fetchCompanyAppSetting()
 
@@ -19,3 +19,5 @@ export const Page = async () => {
     </Main>
   )
 }
+
+export default Page

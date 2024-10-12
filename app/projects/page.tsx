@@ -3,7 +3,7 @@ import { ContactSection } from '../components/baseComponents/ContactSection'
 import { ProjectSection } from '../components/projectComponents/ProjectSection'
 import { fetchProjects } from '../utils/contentful/queries/project'
 
-export const Page = async () => {
+const Page = async () => {
   const projects = await fetchProjects()
   return (
     <MainWithPaddingTop>
@@ -12,3 +12,5 @@ export const Page = async () => {
     </MainWithPaddingTop>
   )
 }
+
+export default Page
