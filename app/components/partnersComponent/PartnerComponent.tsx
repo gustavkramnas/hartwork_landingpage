@@ -2,14 +2,11 @@
 import styled from 'styled-components'
 import { Container, Fade, Section } from '../baseComponents/base'
 import { PartnerSVG } from './PartnerSVG'
-import { theme } from '@/app/utils/appSettings/theme'
 import { H1 } from '../fontComponents/fonts'
 
 const IconContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  /* gap: ${theme.style.layout.gap}; */
-  /* @media (min-width: ) */
 `
 
 const Icon = styled.div`
