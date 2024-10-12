@@ -1,6 +1,5 @@
 import { Project } from "@/app/types/Types"
 
-
 export const extractGalleryItems = (project: Project) => {
   const galleryItems: Array<{
     sys: {
