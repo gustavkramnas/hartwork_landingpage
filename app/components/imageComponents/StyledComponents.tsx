@@ -25,19 +25,20 @@ export const GalleryContainer = styled.div`
   padding: calc(${theme.style.layout.gap} * 4) ${theme.style.layout.gap};
 
   //Added for testing, remove later
-@media(min-width: ${theme.style.layout.sizes.mobileQueries}) {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
-  & > *:nth-child(3) {
+  @media (min-width: ${theme.style.layout.sizes.mobileQueries}) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    & > *:nth-child(3) {
       grid-column: 1 / -1;
     }
-}
+  }
 
-@media (min-width: 1696px) {
-  & > *:nth-child(3) {
+  @media (min-width: 1696px) {
+    grid-template-columns: repeat(auto-fit, minmax(750px, 1fr));
+    /* & > *:nth-child(3) {
       grid-column: auto;
-    }
-}
+    } */
+  }
 
   gap: ${theme.style.layout.gap};
 `
