@@ -60,7 +60,9 @@ export const Section: React.FC<SectionProps> = ({ children }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
-          observer.disconnect()
+          // observer.disconnect()
+        } else {
+          setIsVisible(false)
         }
       },
       { threshold: 0.1 }

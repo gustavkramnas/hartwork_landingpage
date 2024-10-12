@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { OnePost } from '@/app/types/Types'
 import { H1, ProjectP } from '../fontComponents/fonts'
 import { theme } from '@/app/utils/appSettings/theme'
+import { Fade } from '../baseComponents/base'
 
 const ThumbnailContainer = styled.div`
   position: relative;
@@ -41,26 +42,28 @@ export const ProjectThumbnailComponent = ({
   slug
 }: OnePost) => {
   return (
-    <Link href={`/${slug}`}>
-      {thumbnailUrl ? (
-        <ItemContainer>
-          <ThumbnailContainer>
-            <Image
-              src={thumbnailUrl}
-              alt={title || 'thumbnail'}
-              fill
-              sizes="100%"
-              priority
-              style={{ objectFit: 'cover' }}
-            />
-          </ThumbnailContainer>
-          <ThumbnailTitle>
-            <ProjectP $white>{title}</ProjectP>
-          </ThumbnailTitle>
-        </ItemContainer>
-      ) : (
-        <H1>No Thumbnail</H1>
-      )}
-    </Link>
+    <Fade>
+      <Link href={`/${slug}`}>
+        {thumbnailUrl ? (
+          <ItemContainer>
+            <ThumbnailContainer>
+              <Image
+                src={thumbnailUrl}
+                alt={title || 'thumbnail'}
+                fill
+                sizes="100%"
+                priority
+                style={{ objectFit: 'cover' }}
+              />
+            </ThumbnailContainer>
+            <ThumbnailTitle>
+              <ProjectP $white>{title}</ProjectP>
+            </ThumbnailTitle>
+          </ItemContainer>
+        ) : (
+          <H1>No Thumbnail</H1>
+        )}
+      </Link>
+    </Fade>
   )
 }
