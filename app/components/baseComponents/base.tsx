@@ -38,6 +38,15 @@ const BuildSection = styled.section`
   }
 `
 
+const FadeContainer = styled.div`
+ opacity: 0;
+  transition: opacity 0.6s ease-in;
+
+  &.visible {
+    opacity: 1;
+  }
+`
+
 type SectionProps = {
   children: React.ReactNode
 }
@@ -73,5 +82,39 @@ export const Section: React.FC<SectionProps> = ({ children }) => {
     <BuildSection ref={sectionRef} className={isVisible ? 'visible' : ''}>
       {children}
     </BuildSection>
+  )
+}
+
+export const Fade: React.FC<SectionProps> = ({ children }) => {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    const currentSectionRef = sectionRef.current;
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef)
+    }
+
+    return () => {
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef)
+      }
+    }
+  }, [])
+
+  return (
+    <FadeContainer ref={sectionRef} className={isVisible ? 'visible' : ''}>
+      {children}
+    </FadeContainer>
   )
 }

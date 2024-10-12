@@ -3,6 +3,7 @@ import { GalleryComponentProps } from '@/app/types/Types'
 import { GalleryContainer, GalleryItem } from './StyledComponents'
 import { VideoComponent } from './VideoComponent'
 import { P } from '../fontComponents/fonts'
+import { Fade } from '../baseComponents/base'
 
 export const GalleryComponent = ({ galleryItems }: GalleryComponentProps) => {
   const isImageFile = (url: string) => {
@@ -19,15 +20,20 @@ export const GalleryComponent = ({ galleryItems }: GalleryComponentProps) => {
         const fileUrl = `https:${item.fields.file.url}`
 
         return (
-          <GalleryItem key={index}>
-            {isImageFile(fileUrl) ? (
-              <GalleryImageComponent url={fileUrl} title={item.fields.title} />
-            ) : isVideoFile(fileUrl) ? (
-              <VideoComponent url={fileUrl} />
-            ) : (
-              <P $white>Unsupported file type</P>
-            )}
-          </GalleryItem>
+          <Fade key={index}>
+            <GalleryItem>
+              {isImageFile(fileUrl) ? (
+                <GalleryImageComponent
+                  url={fileUrl}
+                  title={item.fields.title}
+                />
+              ) : isVideoFile(fileUrl) ? (
+                <VideoComponent url={fileUrl} />
+              ) : (
+                <P $white>Unsupported file type</P>
+              )}
+            </GalleryItem>
+          </Fade>
         )
       })}
     </GalleryContainer>
