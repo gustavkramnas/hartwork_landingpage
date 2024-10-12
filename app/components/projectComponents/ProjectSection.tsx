@@ -16,7 +16,7 @@ const ItemsContainer = styled.div`
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: ${theme.style.layout.gap};
-  max-width: calc(${theme.style.layout.sizes.maxWidth} + 200px);
+  max-width: calc(${theme.style.layout.sizes.maxWidth} + 170px);
   padding-top: 40px;
 `
 
