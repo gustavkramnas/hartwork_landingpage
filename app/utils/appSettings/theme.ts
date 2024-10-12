@@ -19,7 +19,7 @@ export const theme = {
       headerSize: '32px',
       linkButtonWithArrowSize: '17px',
       linkButtonWithArrowWeight: 'bold',
-      headLineSize: '32px',
+      headLineSize: '30px',
       paragraphSize: '16px',
       paddingBottom: '12px',
       paragraphLarger: '16px',
