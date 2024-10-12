@@ -11,6 +11,7 @@ export const GalleryImageComponent = ({ url, title }: ImageProps) => {
         alt={title || 'Alt text'}
         fill
         priority
+        sizes='100%'
         style={{ objectFit: 'contain' }}
       />
     </ImageContainer>
