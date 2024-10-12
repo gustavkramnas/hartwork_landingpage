@@ -23,6 +23,11 @@ export const ImageContainer = styled.div`
 export const GalleryContainer = styled.div`
   background-color: ${theme.style.colors.primary};
   padding: calc(${theme.style.layout.gap} * 4) 0;
+
+  //Added for testing, remove later
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  gap: ${theme.style.layout.gap};
 `
 export const GalleryItem = styled.div`
   padding: ${theme.style.layout.gap} 0;
