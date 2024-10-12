@@ -35,6 +35,7 @@ const BuildSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   padding: ${theme.style.layout.desktopSectionPadding} ${theme.style.layout.desktopEdgePadding};
 

@@ -8,7 +8,7 @@ import { theme } from '@/app/utils/appSettings/theme'
 
 const ThumbnailContainer = styled.div`
   position: relative;
-  width: 220px;
+  width: 300px;
   height: 200px;
 `
 
