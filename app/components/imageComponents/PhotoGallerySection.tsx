@@ -2,7 +2,7 @@ import { GalleryComponentProps } from '@/app/types/Types'
 import { PhotoGalleryContainer, PhotoGalleryImageContainer } from './StyledComponents'
 import { VideoComponent } from './VideoComponent'
 import { H1, P } from '../fontComponents/fonts'
-import { Container, Section } from '../baseComponents/base'
+import { Container, Fade, Section } from '../baseComponents/base'
 import { PhotoGalleryImageComponent } from './PhotoGalleryImageComponent'
 
 export const PhotoGallerySection = ({
@@ -25,7 +25,7 @@ export const PhotoGallerySection = ({
             const fileUrl = `https:${item.fields.file.url}`
 
             return (
-              <div key={index}>
+              <Fade key={index}>
                 {isImageFile(fileUrl) ? (
                   <PhotoGalleryImageComponent
                     url={fileUrl}
@@ -38,7 +38,7 @@ export const PhotoGallerySection = ({
                 ) : (
                   <P $white>Unsupported file type</P>
                 )}
-              </div>
+              </Fade>
             )
           })}
         </PhotoGalleryContainer>

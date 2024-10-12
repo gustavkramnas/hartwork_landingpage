@@ -15,35 +15,11 @@ export const HeaderComponent = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [scrolled, setScrolled] = useState<boolean>(false)
   const [lastScrollY, setLastScrollY] = useState<number>(0)
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const currentScrollY = window.scrollY
-  //     const windowWidth = window.innerWidth
 
-  //     // Kolla om fönsterbredden är större än 475px
-  //     if (windowWidth > 475) {
-  //       if (currentScrollY > 100 && currentScrollY > lastScrollY) {
-  //         setScrolled(true)
-  //       } else if (currentScrollY < lastScrollY) {
-  //         setScrolled(false)
-  //       }
-  //     } else {
-  //       setScrolled(false) // Om skärmen är mindre än 475px, sätt 'scrolled' till false
-  //     }
-
-  //     setLastScrollY(currentScrollY)
-  //   }
-
-  //   window.addEventListener('scroll', handleScroll)
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll)
-  //   }
-  // }, [lastScrollY])
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
       const windowWidth = window.innerWidth
-
       const mobileQueryWidth = parseInt(
         theme.style.layout.sizes.mobileQueries,
         10
@@ -58,7 +34,6 @@ export const HeaderComponent = () => {
       } else {
         setScrolled(false)
       }
-
       setLastScrollY(currentScrollY)
     }
 
@@ -79,23 +54,19 @@ export const HeaderComponent = () => {
   }
 
   return (
-    <>
-      <Header $scrolled={scrolled}>
-        <Nav>
-          <CompanyLogo $scrolled={scrolled} />
-          <PageLinksContainer />
-
-          <MobileButtonContainer>
-            {showHamburger ? (
-              <HamBurgerButton onClick={openMenu} />
-            ) : (
-              <CloseButton onClick={closeMenu} />
-            )}
-          </MobileButtonContainer>
-          {/* {showMenu && <MobileMenuContainer onClick={closeMenu} $showMenu={showMenu}  />} */}
-          <MobileMenuContainer onClick={closeMenu} $showMenu={showMenu} />
-        </Nav>
-      </Header>
-    </>
+    <Header $scrolled={scrolled}>
+      <Nav>
+        <CompanyLogo $scrolled={scrolled} />
+        <PageLinksContainer />
+        <MobileButtonContainer>
+          {showHamburger ? (
+            <HamBurgerButton onClick={openMenu} />
+          ) : (
+            <CloseButton onClick={closeMenu} />
+          )}
+        </MobileButtonContainer>
+        <MobileMenuContainer onClick={closeMenu} $showMenu={showMenu} />
+      </Nav>
+    </Header>
   )
 }
