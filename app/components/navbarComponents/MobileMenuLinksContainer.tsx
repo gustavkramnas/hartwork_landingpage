@@ -8,33 +8,14 @@ type Props = {
   $showMenu: boolean
 }
 
-// const MobileContainer = styled.div<Props>`
-//   position: fixed;
-//   height: 100vh;
-//   z-index: 999;
-//   top: 50px;
-//   bottom: 0;
-//   transition: 0.6s ease-in-out;
-//   left: 0;
-//   right: 0;
-//   background-color: ${theme.style.colors.tertiary};
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   @media (min-width: ${theme.style.layout.sizes.mobileQueries}) {
-//     display: none;
-//   }
-// `
-
 const MobileContainer = styled.div<Props>`
   position: fixed;
   height: 100vh;
   z-index: 999;
-  /* right: ${({ $showMenu }) => ($showMenu ? '0' : '-100vw')}; */
-  right: 0;
+  right: ${({ $showMenu }) => ($showMenu ? '0' : '-100vw')};
   top: ${theme.style.layout.mobileContainerNavPadding};
   width: 100%;
-  /* transition: right 0.3s ease-in-out; */
+  transition: right 0.3s ease-in-out;
   opacity: ${({ $showMenu }) => ($showMenu ? '1' : '0')};
   transition: opacity 0.3s ease-in-out;
   background-color: ${theme.style.colors.tertiary};
