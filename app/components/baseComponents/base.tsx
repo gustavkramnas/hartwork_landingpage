@@ -39,7 +39,7 @@ const BuildSection = styled.section`
 `
 
 const FadeContainer = styled.div`
- opacity: 0;
+  opacity: 0;
   transition: opacity 0.6s ease-in;
 
   &.visible {
@@ -66,7 +66,7 @@ export const Section: React.FC<SectionProps> = ({ children }) => {
       { threshold: 0.1 }
     )
 
-    const currentSectionRef = sectionRef.current;
+    const currentSectionRef = sectionRef.current
     if (currentSectionRef) {
       observer.observe(currentSectionRef)
     }
@@ -94,13 +94,14 @@ export const Fade: React.FC<SectionProps> = ({ children }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
-          observer.disconnect()
+        } else {
+          setIsVisible(false)
         }
       },
       { threshold: 0.1 }
     )
 
-    const currentSectionRef = sectionRef.current;
+    const currentSectionRef = sectionRef.current
     if (currentSectionRef) {
       observer.observe(currentSectionRef)
     }
