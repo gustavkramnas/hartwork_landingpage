@@ -40,7 +40,7 @@ export const SmallP = styled(P)`
 `
 
 export const ProjectP = styled(P)`
-  font-size: ${theme.style.font.smallParagraphSize};
+  font-size: ${theme.style.font.paragraphSize};
 `
 
 export const ButtonTitle = styled(P)`
