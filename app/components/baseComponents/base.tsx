@@ -3,6 +3,10 @@ import { theme } from '@/app/utils/appSettings/theme'
 import { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 
+type SectionProps = {
+  children: React.ReactNode
+}
+
 export const Main = styled.main`
   min-height: 80vh;
 `
@@ -46,10 +50,16 @@ const FadeContainer = styled.div`
     opacity: 1;
   }
 `
+const SlideContainer = styled.div`
+  opacity: 0;
+  transform: translateX(5%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 
-type SectionProps = {
-  children: React.ReactNode
-}
+  &.visible {
+    opacity: 1;
+    transform: translateX(0); /* Slutposition: på sin plats */
+  }
+`
 
 export const Section: React.FC<SectionProps> = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false)
@@ -119,5 +129,40 @@ export const Fade: React.FC<SectionProps> = ({ children }) => {
     <FadeContainer ref={sectionRef} className={isVisible ? 'visible' : ''}>
       {children}
     </FadeContainer>
+  )
+}
+
+export const Slide: React.FC<SectionProps> = ({ children }) => {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        } else {
+          setIsVisible(false)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    const currentSectionRef = sectionRef.current
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef)
+    }
+
+    return () => {
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef)
+      }
+    }
+  }, [])
+
+  return (
+    <SlideContainer ref={sectionRef} className={isVisible ? 'visible' : ''}>
+      {children}
+    </SlideContainer>
   )
 }

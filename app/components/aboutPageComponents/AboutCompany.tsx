@@ -1,6 +1,6 @@
 'use client'
 import styled from 'styled-components'
-import { Section, Container } from '../baseComponents/base'
+import { Section, Container, Slide } from '../baseComponents/base'
 import { H1, P } from '../fontComponents/fonts'
 import { theme } from '@/app/utils/appSettings/theme'
 
@@ -16,10 +16,12 @@ export const AboutCompany = ({ info }: Props) => {
   return (
     <Section>
       <Container>
-        <H1>Hartwork</H1>
-        <ContactContainer>
-          <P>{info}</P>
-        </ContactContainer>
+        <Slide>
+          <H1>Hartwork</H1>
+          <ContactContainer>
+            <P>{info}</P>
+          </ContactContainer>
+        </Slide>
       </Container>
     </Section>
   )
