@@ -1,6 +1,6 @@
 'use client'
 import styled from 'styled-components'
-import { Container, Fade, Section } from '../baseComponents/base'
+import { Container, Fade, Section, Slide } from '../baseComponents/base'
 import { PartnerSVG } from './PartnerSVG'
 import { H1 } from '../fontComponents/fonts'
 
@@ -20,7 +20,9 @@ export const PartnerComponent = () => {
   return (
     <Section>
       <Container>
-        <H1>Några av våra kunder</H1>
+        <Slide>
+          <H1>Några av våra kunder</H1>
+        </Slide>
         <IconContainer>
           {Object.entries(PartnerSVG).map(([key, logo]) => (
             <Fade key={key}>

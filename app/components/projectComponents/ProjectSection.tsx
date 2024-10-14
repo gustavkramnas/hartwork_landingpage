@@ -1,6 +1,6 @@
 'use client'
 import styled from 'styled-components'
-import { Container, Section } from '../baseComponents/base'
+import { Container, Section, Slide } from '../baseComponents/base'
 import { H2 } from '../fontComponents/fonts'
 import { Project } from '@/app/types/Types'
 import { ProjectThumbnailComponent } from './ProjectThumbnailComponent'
@@ -32,7 +32,9 @@ export const ProjectSection = ({ headLine, projects }: Props) => {
   return (
     <Section>
       <Container>
-        <H2>{headLine}</H2>
+        <Slide>
+          <H2>{headLine}</H2>
+        </Slide>
       </Container>
       <ItemsContainer>
         {projects.map((project: Project) => {

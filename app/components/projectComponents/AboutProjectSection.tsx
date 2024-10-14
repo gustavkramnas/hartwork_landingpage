@@ -1,5 +1,5 @@
 'use client'
-import { Container, Section } from '../baseComponents/base'
+import { Container, Section, Slide } from '../baseComponents/base'
 import { H1 } from '../fontComponents/fonts'
 
 type Props = {
@@ -11,8 +11,10 @@ export const AboutProjectSection = ({ title, description }: Props) => {
   return (
     <Section>
       <Container>
-        <H1>{title}</H1>
-        <div>{description}</div>
+        <Slide>
+          <H1>{title}</H1>
+          <div>{description}</div>
+        </Slide>
       </Container>
     </Section>
   )
