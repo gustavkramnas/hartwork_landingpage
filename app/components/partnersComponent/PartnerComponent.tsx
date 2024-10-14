@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Container, Fade, Section } from '../baseComponents/base'
 import { PartnerSVG } from './PartnerSVG'
 import { H1 } from '../fontComponents/fonts'
+import { theme } from '@/app/utils/appSettings/theme'
 
 const IconContainer = styled.div`
   display: grid;
