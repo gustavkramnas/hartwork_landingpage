@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 
 export const Main = styled.main`
-  min-height: 80vh;
+  min-height: 57vh;
 `
 export const MainWithPaddingTop = styled(Main)`
   padding-top: ${theme.style.layout.desktopPaddingTop};

@@ -4,8 +4,10 @@ import { A, H1, P } from '../fontComponents/fonts'
 type Props = {
   allInfo?: boolean
 }
+
 export const ContactInfo = async ({ allInfo }: Props) => {
   const contactInfo = await fetchCompanyAppSetting()
+  
   return (
     <>
       {allInfo && (
