@@ -2,7 +2,11 @@ export const theme = {
   company: 'Hartwork',
   description: 'Hartwork agency',
   pages: {
-    links: ['/about', '/contact', '/projects']
+    links: [
+      { title: 'Om oss', href: '/about' },
+      { title: 'Kontakt', href: '/contact' },
+      { title: 'Kunduppdrag', href: '/projects' }
+    ]
   },
   style: {
     colors: {
@@ -12,14 +16,16 @@ export const theme = {
     },
     font: {
       fontFamily: `'Manrope', sans-serif`,
-      headerSize: '24px',
-      linkButtonWithArrowSize: '12px',
+      headerSize: '32px',
+      linkButtonWithArrowSize: '17px',
       linkButtonWithArrowWeight: 'bold',
-      headLineSize: '21px',
-      paragraphSize: '12px',
+      headLineSize: '32px',
+      paragraphSize: '16px',
       paddingBottom: '12px',
       paragraphLarger: '16px',
       paragraphLineHeight: '1.5',
+      paragraphProjectSize: '14px',
+      smallParagraphSize: '12px'
     },
     layout: {
       sizes: {

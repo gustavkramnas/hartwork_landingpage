@@ -22,7 +22,15 @@ export const ImageContainer = styled.div`
 `
 export const GalleryContainer = styled.div`
   background-color: ${theme.style.colors.primary};
-  padding: calc(${theme.style.layout.gap} * 4) 0;
+  padding: calc(${theme.style.layout.gap} * 4) ${theme.style.layout.gap};
+
+  //Added for testing, remove later
+@media(min-width: ${theme.style.layout.sizes.mobileQueries}) {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+}
+
+  gap: ${theme.style.layout.gap};
 `
 export const GalleryItem = styled.div`
   padding: ${theme.style.layout.gap} 0;
@@ -33,9 +41,10 @@ export const PhotoGalleryImageContainer = styled.div`
   width: 100%;
   height: 300px;
   transition: 0, 6s all;
+  display: flex;
 `
 export const PhotoGalleryContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: ${theme.style.layout.gap};
 `

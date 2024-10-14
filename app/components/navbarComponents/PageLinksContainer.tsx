@@ -39,13 +39,9 @@ export const PageLinksContainer = () => {
   return (
     <PageList>
       {pages.map((page) => {
-        const title =
-          page.replace('/', '').charAt(0).toUpperCase() +
-          page.replace('/', '').slice(1)
-
         return (
-          <ListItem key={page}>
-            <PageLink href={page}>{title}</PageLink>
+          <ListItem key={page.href}>
+            <PageLink href={page.href}>{page.title}</PageLink>
           </ListItem>
         )
       })}

@@ -1,7 +1,7 @@
 'use client'
 import styled from 'styled-components'
 import { Section, Container } from '../baseComponents/base'
-import { H1, P_L } from '../fontComponents/fonts'
+import { H1, P } from '../fontComponents/fonts'
 import { theme } from '@/app/utils/appSettings/theme'
 
 type Props = {
@@ -18,7 +18,7 @@ export const AboutCompany = ({ info }: Props) => {
       <Container>
         <H1>Hartwork</H1>
         <ContactContainer>
-          <P_L>{info}</P_L>
+          <P>{info}</P>
         </ContactContainer>
       </Container>
     </Section>
