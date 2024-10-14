@@ -5,7 +5,8 @@ export const theme = {
     links: [
       { title: 'Om oss', href: '/about' },
       { title: 'Kontakt', href: '/contact' },
-      { title: 'Kunduppdrag', href: '/projects' }
+      { title: 'Kunduppdrag', href: '/projects' },
+      { title: 'Gallery', href: '/gallery' }
     ]
   },
   style: {
