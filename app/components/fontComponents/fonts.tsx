@@ -45,6 +45,7 @@ export const H6 = styled.h6`
   padding: 0;
   font-family: ${theme.style.font.fontFamily};
   font-size: ${theme.style.font.headLineSizeH6};
+  line-height: 1.5rem;
 `
 
 export const P = styled.p<Props>`
