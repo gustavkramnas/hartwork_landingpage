@@ -16,7 +16,3 @@ export const fetchCompanyAppSetting = async (): Promise<any> => {
   return response
 }
 
-export const fetchCompanyAppSettingHartworkContact = async (): Promise<any> => {
-  const respons = await ContentfulClient.getEntry('4KFC31WDKyJ5En9hDBsPcb')
-  return respons
-}
