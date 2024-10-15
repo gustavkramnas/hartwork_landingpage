@@ -24,11 +24,11 @@ export const HeaderComponent = () => {
         theme.style.layout.sizes.mobileQueries,
         10
       )
-
+  
       if (windowWidth > mobileQueryWidth) {
-        if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+        if (currentScrollY > 70) {
           setScrolled(true)
-        } else if (currentScrollY < lastScrollY) {
+        } else {
           setScrolled(false)
         }
       } else {
@@ -36,7 +36,7 @@ export const HeaderComponent = () => {
       }
       setLastScrollY(currentScrollY)
     }
-
+  
     window.addEventListener('scroll', handleScroll)
     return () => {
       window.removeEventListener('scroll', handleScroll)

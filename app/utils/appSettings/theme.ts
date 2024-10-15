@@ -12,7 +12,7 @@ export const theme = {
   style: {
     colors: {
       primary: '#000000',
-      secondary: '#e2021b',
+      secondary: '#801818',
       tertiary: '#ffffff'
     },
     font: {
@@ -35,12 +35,12 @@ export const theme = {
       },
       mobileSectionPadding: '24px',
       desktopSectionPadding: '48px',
-      desktopEdgePadding: '24px',
+      desktopEdgePadding: '15px',
       mobileEdgePadding: '6px',
       buttonsPadding: '12px 24px',
       buttonRadius: '100px',
       gap: '12px',
-      desktopPaddingTop: '180px',
+      desktopPaddingTop: '140px',
       mobilePaddingTop: '80px',
       mobileContainerNavPadding: '60px'
     },

@@ -22,7 +22,7 @@ export const Footer = () => {
               <CompanyLogo white />
               <ContactInfo />
             </div>
-            <SmallP $white>{year}</SmallP>
+            <SmallP $white>{year} HARTWORK</SmallP>
           </FlexContainer>
         </Container>
       </Section>

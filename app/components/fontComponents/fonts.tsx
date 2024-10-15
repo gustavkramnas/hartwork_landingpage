@@ -24,8 +24,30 @@ export const H3 = styled.h3`
   margin: 0;
   padding: 0;
   font-family: ${theme.style.font.fontFamily};
-  font-size: ${theme.style.font.headLineSize};
+  font-size: ${theme.style.font.headLineSizeH3};
 `
+export const H4 = styled.h4`
+  margin: 0;
+  padding: 0;
+  font-family: ${theme.style.font.fontFamily};
+  font-size: ${theme.style.font.headLineSizeH4};
+`
+
+export const H5 = styled.h5`
+  margin: 0;
+  padding: 0;
+  font-family: ${theme.style.font.fontFamily};
+  font-size: ${theme.style.font.headLineSizeH5};
+`
+
+export const H6 = styled.h6`
+  margin: 0;
+  padding: 0;
+  font-family: ${theme.style.font.fontFamily};
+  font-size: ${theme.style.font.headLineSizeH6};
+  line-height: 1.5rem;
+`
+
 export const P = styled.p<Props>`
   margin: 0;
   padding: 0;
@@ -40,7 +62,7 @@ export const SmallP = styled(P)`
 `
 
 export const ProjectP = styled(P)`
-  font-size: ${theme.style.font.smallParagraphSize};
+  font-size: ${theme.style.font.paragraphSize};
 `
 
 export const ButtonTitle = styled(P)`
