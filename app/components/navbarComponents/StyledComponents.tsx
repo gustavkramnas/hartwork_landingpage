@@ -36,7 +36,7 @@ export const Header = styled.header<Props>`
         : 'none'}; */
     border-bottom: ${({ $scrolled }) => $scrolled ? '1px solid rgba(0, 0, 0, 0.1)' : 'none'};
     background-color: ${({ $scrolled }) =>
-      $scrolled ? `${theme.style.colors.tertiary}` : 'transparent'};
+      $scrolled ? `${theme.style.colors.secondary}` : 'transparent'};
     transition: 0.9s;
     &:hover {
     background-color: rgba(255, 255, 255, 0.9); /* Add opacity only to background */
