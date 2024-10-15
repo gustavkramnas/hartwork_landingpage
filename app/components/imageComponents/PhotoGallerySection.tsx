@@ -1,8 +1,13 @@
+'use client'
 import { GalleryComponentProps } from '@/app/types/Types'
-import { PhotoGalleryContainer, PhotoGalleryImageContainer } from './StyledComponents'
+import {
+  PhotoGalleryContainer,
+  PhotoGalleryImageContainer,
+  PopUpButton
+} from './StyledComponents'
 import { VideoComponent } from './VideoComponent'
 import { H1, P } from '../fontComponents/fonts'
-import { Container, Fade, Section } from '../baseComponents/base'
+import { Container, Fade, Section, Slide } from '../baseComponents/base'
 import { PhotoGalleryImageComponent } from './PhotoGalleryImageComponent'
 
 export const PhotoGallerySection = ({
@@ -16,29 +21,37 @@ export const PhotoGallerySection = ({
     return url.match(/\.(mp4|webm|ogg)$/i)
   }
 
+  const PopUp = (src: string) => {
+    console.log(src)
+  }
+
   return (
     <Section>
       <Container>
-        <H1>Mer bilder</H1>
+        <Slide>
+          <H1>Blandade jobb åt kund</H1>
+        </Slide>
         <PhotoGalleryContainer>
           {galleryItems.map((item, index) => {
             const fileUrl = `https:${item.fields.file.url}`
 
             return (
-              <Fade key={index}>
-                {isImageFile(fileUrl) ? (
-                  <PhotoGalleryImageComponent
-                    url={fileUrl}
-                    title={item.fields.title}
-                  />
-                ) : isVideoFile(fileUrl) ? (
-                  <PhotoGalleryImageContainer>
-                    <VideoComponent url={fileUrl} />
-                  </PhotoGalleryImageContainer>
-                ) : (
-                  <P $white>Unsupported file type</P>
-                )}
-              </Fade>
+              <PopUpButton key={index} onClick={() => PopUp(fileUrl)}>
+                <Fade>
+                  {isImageFile(fileUrl) ? (
+                    <PhotoGalleryImageComponent
+                      url={fileUrl}
+                      title={item.fields.title}
+                    />
+                  ) : isVideoFile(fileUrl) ? (
+                    <PhotoGalleryImageContainer>
+                      <VideoComponent url={fileUrl} />
+                    </PhotoGalleryImageContainer>
+                  ) : (
+                    <P $white>Unsupported file type</P>
+                  )}
+                </Fade>
+              </PopUpButton>
             )
           })}
         </PhotoGalleryContainer>

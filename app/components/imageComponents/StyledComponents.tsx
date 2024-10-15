@@ -58,3 +58,23 @@ export const PhotoGalleryContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: ${theme.style.layout.gap};
 `
+
+type PopupButtonProps = {
+  onClick: () => void
+  children: React.ReactNode
+}
+export const ImageOrVideoToPopupButton = styled.button`
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+`
+
+export const PopUpButton = ({ onClick, children }: PopupButtonProps) => {
+  return (
+    <ImageOrVideoToPopupButton onClick={onClick}>
+      {children}
+    </ImageOrVideoToPopupButton>
+  )
+}
