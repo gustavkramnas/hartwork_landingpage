@@ -62,6 +62,7 @@ export const SmallP = styled(P)`
 `
 
 export const ProjectP = styled(P)`
+  text-align: center;
   font-size: ${theme.style.font.paragraphSize};
 `
 
