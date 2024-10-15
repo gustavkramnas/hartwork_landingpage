@@ -40,7 +40,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         )}
       />
       <GalleryComponent galleryItems={galleryItems} />
-      <ProjectSection headLine={'Mer projekt'} projects={projects} />
+      <ProjectSection headLine={'Annan Art'} projects={projects} />
       <ContactSection />
     </Main>
   )

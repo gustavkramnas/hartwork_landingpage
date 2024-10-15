@@ -210,7 +210,9 @@ export type CompanyAppSetting = {
     contactPerson?: string
     phoneNumber?: string
     shortDescription?: string
+    contactCompanyInfo?: string
   }
+
 }
 
 export type PhotoGallery = {
