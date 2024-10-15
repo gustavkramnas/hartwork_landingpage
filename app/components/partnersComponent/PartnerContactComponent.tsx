@@ -1,5 +1,5 @@
 'use client'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { Container, Fade, Section } from '../baseComponents/base'
 import { PartnerSVG } from './PartnerSVG'
 import { theme } from '@/app/utils/appSettings/theme'
@@ -13,7 +13,6 @@ const IconContainer = styled.div`
   justify-content: center;
   align-items: center;
 `
-
 
 const Icon = styled.div`
   display: flex;
