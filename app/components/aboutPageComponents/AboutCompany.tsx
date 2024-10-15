@@ -1,11 +1,11 @@
 'use client'
 import styled from 'styled-components'
-import { Section, Container, Slide } from '../baseComponents/base'
+import { Section, Container } from '../baseComponents/base'
 import { H1, P } from '../fontComponents/fonts'
 import { theme } from '@/app/utils/appSettings/theme'
 
 type Props = {
-  info: string
+  info: React.ReactNode
 }
 
 const ContactContainer = styled.div`
@@ -16,12 +16,11 @@ export const AboutCompany = ({ info }: Props) => {
   return (
     <Section>
       <Container>
-        <Slide>
-          <H1>Hartwork</H1>
-          <ContactContainer>
-            <P>{info}</P>
-          </ContactContainer>
-        </Slide>
+        <H1>Hartwork</H1>
+        <ContactContainer>
+          {/* <P>{info}</P> */}
+          {info}
+        </ContactContainer>
       </Container>
     </Section>
   )
