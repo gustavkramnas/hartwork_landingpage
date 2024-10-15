@@ -4,7 +4,7 @@ type Props = {
 
 export const VideoComponent = ({ url }: Props) => {
   return (
-    <video controls width="100%" height="auto" src={url} autoPlay loop muted>
+    <video width="100%" height="auto" src={url} autoPlay loop muted controls controlsList="nodownload" >
       Your browser does not support the video tag.
     </video>
   )
