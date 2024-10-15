@@ -26,7 +26,7 @@ export const HeaderComponent = () => {
       )
 
       if (windowWidth > mobileQueryWidth) {
-        if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+        if (currentScrollY > 70 && currentScrollY > lastScrollY) {
           setScrolled(true)
         } else if (currentScrollY < lastScrollY) {
           setScrolled(false)
