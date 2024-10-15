@@ -45,7 +45,8 @@ const PopupContainer = styled.div`
 `
 const ButtonContainer = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   background: ${theme.style.colors.tertiary};
   height: 30px;
 `
