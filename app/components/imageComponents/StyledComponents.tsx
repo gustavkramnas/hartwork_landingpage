@@ -2,12 +2,18 @@
 import { theme } from '@/app/utils/appSettings/theme'
 import styled from 'styled-components'
 
-export const LargeContainer = styled.div`
+export const LargeImageContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
   transition: 0, 6s all;
   opacity: 0.8;
+`
+
+export const RegularImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
 `
 export const ThumbnailContainer = styled.div`
   position: relative;

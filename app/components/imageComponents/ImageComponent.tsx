@@ -1,11 +1,11 @@
 'use client'
 import Image from 'next/image'
-import { LargeContainer } from './StyledComponents'
+import { LargeImageContainer, RegularImageContainer } from './StyledComponents'
 import { ImageProps } from '@/app/types/Types'
 
 export const ImageComponent = ({ url, title }: ImageProps) => {
   return (
-    <LargeContainer>
+    <LargeImageContainer>
       <Image
         src={url}
         alt={title || 'Alt text'}
@@ -13,6 +13,21 @@ export const ImageComponent = ({ url, title }: ImageProps) => {
         priority
         style={{ objectFit: 'cover' }}
       />
-    </LargeContainer>
+    </LargeImageContainer>
+  )
+}
+
+export const ImageComponentForPopup = ({ url, title }: ImageProps) => {
+  return (
+    <RegularImageContainer>
+      <Image
+        src={url}
+        alt={title || 'Alt text'}
+        fill
+        priority
+        sizes="100%"
+        style={{ objectFit: 'contain' }}
+      />
+    </RegularImageContainer>
   )
 }
