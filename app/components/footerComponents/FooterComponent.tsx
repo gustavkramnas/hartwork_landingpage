@@ -4,15 +4,17 @@ import { ContactInfo } from '../baseComponents/ContactInfoComponent'
 import { CompanyLogo } from '../baseComponents/CompanyLogo'
 import { FlexContainer } from './StyledComponent'
 import { SmallP } from '../fontComponents/fonts'
+import { fetchCompanyAppSetting } from '@/app/utils/contentful/queries/home'
 
-export const Footer = () => {
+export const Footer = async () => {
   const year = new Date().getFullYear()
+  const company = await fetchCompanyAppSetting()
   return (
     <footer
       style={{
         margin: 0,
         padding: 0,
-        background: theme.style.colors.secondary
+        background: theme.style.colors.primary
       }}
     >
       <Section>
@@ -22,7 +24,9 @@ export const Footer = () => {
               <CompanyLogo white />
               <ContactInfo />
             </div>
-            <SmallP $white>{year} HARTWORK</SmallP>
+            <SmallP $white>
+              {year} {company.fields.companyName.toUpperCase()}
+            </SmallP>
           </FlexContainer>
         </Container>
       </Section>

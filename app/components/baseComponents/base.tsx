@@ -41,6 +41,10 @@ const BuildSection = styled.section`
     padding: ${theme.style.layout.mobileSectionPadding} ${theme.style.layout.mobileEdgePadding};
   }
 `
+export const ThirdOfAContainer = styled(Container)`
+  /* max-width: calc(${theme.style.layout.sizes.maxWidth} / 3); */
+  max-width: 480px;
+`
 
 const FadeContainer = styled.div`
   opacity: 0;
@@ -54,10 +58,14 @@ const SlideContainer = styled.div`
   opacity: 0;
   transform: translateX(5%);
   transition: opacity 0.5s ease, transform 0.5s ease;
+  max-width: 10%;
+  overflow: hidden;
 
   &.visible {
+    width: auto;
     opacity: 1;
-    transform: translateX(0); /* Slutposition: på sin plats */
+    transform: translateX(0);
+    max-width: 80%;
   }
 `
 

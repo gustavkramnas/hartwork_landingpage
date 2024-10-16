@@ -4,15 +4,23 @@ import styled from 'styled-components'
 
 type Props = {
   $white?: boolean
+  $bold?: boolean
 }
 
-export const H1 = styled.h2`
+export const H1 = styled.h2<Props>`
   margin: 0;
   padding: 0;
   font-family: ${theme.style.font.fontFamily};
   font-size: ${theme.style.font.headLineSize};
   padding-bottom: ${theme.style.font.paddingBottom};
 `
+
+export const DisplayH1 = styled(H1)`
+  word-wrap: break-word;
+  letter-spacing: -2px;
+  font-size: 111px;
+`
+
 export const H2 = styled.h2`
   margin: 0;
   padding: 0;
@@ -56,6 +64,7 @@ export const P = styled.p<Props>`
   color: ${(props) =>
     props.$white ? theme.style.colors.tertiary : theme.style.colors.primary};
   line-height: ${theme.style.font.paragraphLineHeight};
+  font-weight: ${(props) => (props.$bold ? '800' : '400')};
 `
 export const SmallP = styled(P)`
   font-size: ${theme.style.font.smallParagraphSize};
