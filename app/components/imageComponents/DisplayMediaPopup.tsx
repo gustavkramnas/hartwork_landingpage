@@ -9,7 +9,6 @@ import {
 import { VideoComponent } from './VideoComponent'
 import { H1 } from '../fontComponents/fonts'
 
-//
 type Props = {
   src: string
   onClick: () => void
@@ -47,7 +46,7 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${theme.style.colors.tertiary};
+  /* background: ${theme.style.colors.tertiary}; */
   height: 30px;
 `
 const ImageContainer = styled.div`
@@ -60,7 +59,7 @@ export const DisplayMediaPopup = ({ src, onClick }: Props) => {
     <PopupWrapper onClick={onClick}>
       <PopupContainer>
         <ButtonContainer>
-          <CloseButton onClick={onClick} />
+          <CloseButton $white onClick={onClick} />
         </ButtonContainer>
         <ImageContainer>
           {isImageFile(src) ? (

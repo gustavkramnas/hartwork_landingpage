@@ -12,6 +12,7 @@ type Props = {
 
 type MobileButtonProps = {
   onClick: () => void
+  $white?:boolean
 }
 
 const LinkButton = styled(Link)`
@@ -186,8 +187,8 @@ export const HamBurgerButton = ({ onClick }: MobileButtonProps) => {
   )
 }
 
-export const CloseButton = ({ onClick }: MobileButtonProps) => {
-  const stroke = theme.style.colors.primary
+export const CloseButton = ({ onClick, $white }: MobileButtonProps) => {
+  const stroke = $white? theme.style.colors.tertiary:  theme.style.colors.primary
   const strokeMiterlimit = '10'
   return (
     <MobileButton onClick={onClick}>
