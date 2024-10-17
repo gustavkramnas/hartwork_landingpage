@@ -48,6 +48,7 @@ export const FlexContainer = styled(Container)`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `
 
 export const ThirdOfAContainer = styled(Container)`

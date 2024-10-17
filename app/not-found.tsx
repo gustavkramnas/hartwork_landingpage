@@ -4,7 +4,8 @@ import {
   FlexContainer,
   FadeSection
 } from './components/baseComponents/base'
-import { DisplayH1 } from './components/fontComponents/fonts'
+import { ArrowButton } from './components/buttonComponents/ButtonComponents'
+import { DisplayH1, P } from './components/fontComponents/fonts'
 
 const NotFound = async () => {
   return (
@@ -13,7 +14,10 @@ const NotFound = async () => {
         <FlexContainer>
           <DisplayH1>404</DisplayH1>
         </FlexContainer>
-        <Container></Container>
+        <Container>
+          <P>Oops! Sidan hittades inte</P>
+          <ArrowButton href="/" title="Tillbaka till startsidan" />
+        </Container>
       </FadeSection>
     </MainWithPaddingTop>
   )
