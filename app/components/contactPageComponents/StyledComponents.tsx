@@ -4,13 +4,13 @@ import { Container } from '../baseComponents/base'
 import { theme } from '@/app/utils/appSettings/theme'
 
 export const ContactContainer = styled(Container)`
-  @media (max-width: ${theme.style.layout.sizes.mobileQueries}) {
+  /* @media (max-width: ${theme.style.layout.sizes.mobileQueries}) {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
   }
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; */
 `
 
 export const ItemContainer = styled.div`
