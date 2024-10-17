@@ -20,13 +20,6 @@ export const PhotoGallerySection = ({
   galleryItems
 }: GalleryComponentProps) => {
   const [showMedia, setShowMedia] = useState('')
-  // const isImageFile = (url: string) => {
-  //   return url.match(/\.(jpeg|jpg|gif|png|svg)$/i)
-  // }
-
-  // const isVideoFile = (url: string) => {
-  //   return url.match(/\.(mp4|webm|ogg)$/i)
-  // }
 
   const PopUp = (src: string) => {
     console.log(src)

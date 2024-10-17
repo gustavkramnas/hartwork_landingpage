@@ -11,7 +11,8 @@ export const PhotoGalleryImageComponent = ({ url, title }: ImageProps) => {
         alt={title || 'Alt text'}
         fill
         sizes="250px"
-        priority
+        // priority
+        loading="lazy"
         style={{ objectFit: 'contain' }}
       />
     </PhotoGalleryImageContainer>

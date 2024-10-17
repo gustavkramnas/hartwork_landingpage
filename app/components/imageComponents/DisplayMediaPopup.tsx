@@ -1,3 +1,4 @@
+'use client'
 import styled from 'styled-components'
 import { ImageComponentForPopup } from './ImageComponent'
 import { theme } from '@/app/utils/appSettings/theme'
@@ -8,7 +9,7 @@ import {
 } from '@/app/utils/helpers/imageOrVideoHelpers'
 import { VideoComponent } from './VideoComponent'
 import { H1 } from '../fontComponents/fonts'
-import { Loader } from '../baseComponents/base'
+import { FlexContainer, Loader } from '../baseComponents/base'
 
 type Props = {
   src: string
@@ -47,7 +48,6 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: ${theme.style.colors.tertiary}; */
   height: 30px;
 `
 const ImageContainer = styled.div`
@@ -72,15 +72,10 @@ export const DisplayMediaPopup = ({ src, onClick }: Props) => {
               <H1>Unsupported file type</H1>
             )
           ) : (
-            <Loader />
+            <FlexContainer>
+              <Loader />
+            </FlexContainer>
           )}
-          {/* {isImageFile(src) ? (
-            <ImageComponentForPopup url={src} />
-          ) : isVideoFile(src) ? (
-            <VideoComponent url={src} />
-          ) : (
-            <H1>Unsupported file type</H1>
-          )} */}
         </ImageContainer>
       </PopupContainer>
     </PopupWrapper>

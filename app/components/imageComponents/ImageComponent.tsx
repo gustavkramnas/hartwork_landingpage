@@ -11,6 +11,7 @@ export const ImageComponent = ({ url, title }: ImageProps) => {
         alt={title || 'Alt text'}
         fill
         priority
+        placeholder="empty"
         style={{ objectFit: 'cover' }}
       />
     </LargeImageContainer>
@@ -23,8 +24,9 @@ export const ImageComponentForPopup = ({ url, title }: ImageProps) => {
       <Image
         src={url}
         alt={title || 'Alt text'}
-        fill
         priority
+        fill
+        placeholder="empty"
         sizes="100%"
         style={{ objectFit: 'contain' }}
       />

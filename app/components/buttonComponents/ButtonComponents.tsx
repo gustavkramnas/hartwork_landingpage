@@ -13,10 +13,11 @@ type Props = {
 type MobileButtonProps = {
   onClick: () => void
   $white?: boolean
-} & ButtonProps
+}
 
 type ButtonProps = {
   children: React.ReactNode
+  onClick: () => void
 }
 
 const LinkButton = styled(Link)`
@@ -156,7 +157,7 @@ export const ArrowButton = ({ href, title }: Props) => {
   )
 }
 
-export const Button = ({ onClick, children }: MobileButtonProps) => {
+export const Button = ({ onClick, children }: ButtonProps) => {
   return <ButtonWrapper onClick={onClick}>{children}</ButtonWrapper>
 }
 
