@@ -1,7 +1,7 @@
 'use client'
 import { theme } from '@/app/utils/appSettings/theme'
 import { useState, useRef, useEffect } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 type SectionProps = {
   children: React.ReactNode
@@ -185,41 +185,64 @@ export const Slide: React.FC<SectionProps> = ({ children }) => {
   )
 }
 
-const heartBeat = keyframes`
-  0% { transform: scale(0.95); }
-  5% { transform: scale(1.1); }
-  39% { transform: scale(0.85); }
-  45% { transform: scale(1); }
-  60% { transform: scale(0.95); }
-  100% { transform: scale(0.9); }
-`
-
 const LoaderContainer = styled.div`
-  position: relative;
-  width: 40px;
-  height: 60px;
-  animation: ${heartBeat} 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  width: 48px;
+  height: 48px;
+  border: 5px solid ${theme.style.colors.secondary};
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
 
-  &:before,
-  &:after {
-    content: '';
-    background: ${theme.style.colors.secondary};
-    width: 40px;
-    height: 60px;
-    border-radius: 50px 50px 0 0;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transform: rotate(45deg);
-    transform-origin: 50% 68%;
-    box-shadow: 5px 4px 5px #0004 inset;
-  }
-
-  &:after {
-    transform: rotate(-45deg);
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 `
 
 export const Loader = () => {
   return <LoaderContainer />
 }
+
+// const heartBeat = keyframes`
+//   0% { transform: scale(0.95); }
+//   5% { transform: scale(1.1); }
+//   39% { transform: scale(0.85); }
+//   45% { transform: scale(1); }
+//   60% { transform: scale(0.95); }
+//   100% { transform: scale(0.9); }
+// `
+// const LoaderContainer = styled.div`
+//   position: relative;
+//   width: 40px;
+//   height: 60px;
+//   animation: ${heartBeat} 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+
+//   &:before,
+//   &:after {
+//     content: '';
+//     background: ${theme.style.colors.secondary};
+//     width: 40px;
+//     height: 60px;
+//     border-radius: 50px 50px 0 0;
+//     position: absolute;
+//     left: 0;
+//     bottom: 0;
+//     transform: rotate(45deg);
+//     transform-origin: 50% 68%;
+//     box-shadow: 5px 4px 5px #0004 inset;
+//   }
+
+//   &:after {
+//     transform: rotate(-45deg);
+//   }
+// `
+
+// export const Loader = () => {
+//   return <LoaderContainer />
+// }
