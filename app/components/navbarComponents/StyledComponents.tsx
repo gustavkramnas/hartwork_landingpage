@@ -34,13 +34,15 @@ export const Header = styled.header<Props>`
       $scrolled
         ? 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px'
         : 'none'}; */
-    border-bottom: ${({ $scrolled }) => $scrolled ? '1px solid rgba(0, 0, 0, 0.1)' : 'none'};
+    border-bottom: ${({ $scrolled }) =>
+      $scrolled ? '1px solid rgba(0, 0, 0, 0.1)' : 'none'};
     background-color: ${({ $scrolled }) =>
-      $scrolled ? `${theme.style.colors.secondary}` : 'transparent'};
+      $scrolled ? `${theme.style.colors.tertiary}` : 'transparent'};
     transition: 0.9s;
     &:hover {
-    background-color: rgba(255, 255, 255, 0.9); /* Add opacity only to background */
-  }
+      background-color: ${theme.style.colors.tertiary};
+      // background-color: rgba(255, 255, 255, 0.9); /* Add opacity only to background */
+    }
   }
 
   @media (max-width: ${theme.style.layout.sizes.mobileQueries}) {

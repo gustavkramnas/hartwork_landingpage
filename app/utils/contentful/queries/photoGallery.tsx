@@ -1,8 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable import/no-anonymous-default-export */
 import ContentfulClient from '../client'
 
-export const fetchPhotGallery = async (): Promise<any> => {
-  const response = await ContentfulClient.getEntry('1EwgEeSxCS5LWfkzRWhNiK')
-  return response
+export const fetchPhotoGallery = async (): Promise<any> => {
+  try {
+    const response = await ContentfulClient.getEntry('1EwgEeSxCS5LWfkzRWhNiK')
+    return response
+  } catch (error) {
+    console.error('Error fetching photo gallery:', error)
+    throw new Error('Failed to fetch photo gallery')
+  }
 }
+
+// export const fetchPhotoGallery = async (): Promise<any> => {
+//   const response = await ContentfulClient.getEntry('1EwgEeSxCS5LWfkzRWhNiK')
+//   return response
+// }

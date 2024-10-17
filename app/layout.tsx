@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/navbarComponents/HeaderComponent'
 import { Footer } from './components/footerComponents/FooterComponent'
 import { theme } from './utils/appSettings/theme'
 import StyledComponentsRegistry from './lib/registry'
+import CookieBanner from './components/cookieBanner/CookieBanner'
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -29,6 +30,7 @@ export default function RootLayout({
           <HeaderComponent />
           {children}
           <Footer />
+          <CookieBanner />
         </body>
       </StyledComponentsRegistry>
     </html>

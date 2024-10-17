@@ -211,6 +211,18 @@ export type CompanyAppSetting = {
     phoneNumber?: string
     shortDescription?: string
     contactCompanyInfo?: string
+    aboutUs?: {
+      content: Array<{
+        nodeType: string
+        content: Array<{
+          nodeType: string
+          value: string
+          marks: Array<{
+            type: string
+          }>
+        }>
+      }>
+    }
   }
 
 }

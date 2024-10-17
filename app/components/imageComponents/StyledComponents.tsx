@@ -2,12 +2,18 @@
 import { theme } from '@/app/utils/appSettings/theme'
 import styled from 'styled-components'
 
-export const LargeContainer = styled.div`
+export const LargeImageContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
   transition: 0, 6s all;
   opacity: 0.8;
+`
+
+export const RegularImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
 `
 export const ThumbnailContainer = styled.div`
   position: relative;
@@ -25,10 +31,20 @@ export const GalleryContainer = styled.div`
   padding: calc(${theme.style.layout.gap} * 4) ${theme.style.layout.gap};
 
   //Added for testing, remove later
-@media(min-width: ${theme.style.layout.sizes.mobileQueries}) {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
-}
+  @media (min-width: ${theme.style.layout.sizes.mobileQueries}) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    & > *:nth-child(3) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: 1696px) {
+    grid-template-columns: repeat(auto-fit, minmax(750px, 1fr));
+    /* & > *:nth-child(3) {
+      grid-column: auto;
+    } */
+  }
 
   gap: ${theme.style.layout.gap};
 `
@@ -48,3 +64,23 @@ export const PhotoGalleryContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: ${theme.style.layout.gap};
 `
+
+type PopupButtonProps = {
+  onClick: () => void
+  children: React.ReactNode
+}
+export const ImageOrVideoToPopupButton = styled.button`
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+`
+
+export const PopUpButton = ({ onClick, children }: PopupButtonProps) => {
+  return (
+    <ImageOrVideoToPopupButton onClick={onClick}>
+      {children}
+    </ImageOrVideoToPopupButton>
+  )
+}

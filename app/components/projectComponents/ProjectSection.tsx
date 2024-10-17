@@ -1,6 +1,6 @@
 'use client'
 import styled from 'styled-components'
-import { Container, Section } from '../baseComponents/base'
+import { Container, FadeSection, Slide } from '../baseComponents/base'
 import { H2 } from '../fontComponents/fonts'
 import { Project } from '@/app/types/Types'
 import { ProjectThumbnailComponent } from './ProjectThumbnailComponent'
@@ -16,8 +16,8 @@ const ItemsContainer = styled.div`
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: ${theme.style.layout.gap};
-  max-width: calc(${theme.style.layout.sizes.maxWidth} + 170px);
-  padding-top: 40px;
+  max-width: calc(${theme.style.layout.sizes.maxWidth} + 140px);
+  padding-top: 20px;
 `
 
 const ProjectItem = styled.div`
@@ -30,9 +30,11 @@ const ProjectItem = styled.div`
 
 export const ProjectSection = ({ headLine, projects }: Props) => {
   return (
-    <Section>
+    <FadeSection>
       <Container>
-        <H2>{headLine}</H2>
+        <Slide>
+          <H2>{headLine}</H2>
+        </Slide>
       </Container>
       <ItemsContainer>
         {projects.map((project: Project) => {
@@ -53,6 +55,6 @@ export const ProjectSection = ({ headLine, projects }: Props) => {
           )
         })}
       </ItemsContainer>
-    </Section>
+    </FadeSection>
   )
 }

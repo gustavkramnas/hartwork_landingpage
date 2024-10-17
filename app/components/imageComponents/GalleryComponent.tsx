@@ -4,15 +4,9 @@ import { GalleryContainer, GalleryItem } from './StyledComponents'
 import { VideoComponent } from './VideoComponent'
 import { P } from '../fontComponents/fonts'
 import { Fade } from '../baseComponents/base'
+import { isImageFile, isVideoFile } from '@/app/utils/helpers/imageOrVideoHelpers'
 
 export const GalleryComponent = ({ galleryItems }: GalleryComponentProps) => {
-  const isImageFile = (url: string) => {
-    return url.match(/\.(jpeg|jpg|gif|png|svg)$/i)
-  }
-
-  const isVideoFile = (url: string) => {
-    return url.match(/\.(mp4|webm|ogg)$/i)
-  }
 
   return (
     <GalleryContainer>

@@ -19,23 +19,41 @@ const ItemContainer = styled.div`
 
 const ThumbnailTitle = styled.div`
   position: absolute;
-  height: 100%;
-  width: 100%;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   opacity: 0;
-  background-color: ${theme.style.colors.secondary};
   z-index: 888;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.2s opacity ease-in-out;
   &:hover {
-    opacity: 0.8;
+    opacity: 1;
   }
 `
+export const Background = styled.div`
+  background-color: ${theme.style.colors.secondary};
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.8;
+`
+
+export const TextContainer = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 export const ProjectThumbnailComponent = ({
   title,
   thumbnailUrl,
@@ -57,7 +75,10 @@ export const ProjectThumbnailComponent = ({
               />
             </ThumbnailContainer>
             <ThumbnailTitle>
-              <ProjectP $white>{title}</ProjectP>
+              <Background />
+              <TextContainer>
+                <ProjectP $white>{title}</ProjectP>
+              </TextContainer>
             </ThumbnailTitle>
           </ItemContainer>
         ) : (

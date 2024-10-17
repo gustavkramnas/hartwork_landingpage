@@ -10,14 +10,18 @@ import { ContactSection } from './components/baseComponents/ContactSection'
 import { ProjectSection } from './components/projectComponents/ProjectSection'
 import { fetchCompanyAppSetting } from './utils/contentful/queries/home'
 import { PartnerComponent } from './components/partnersComponent/PartnerComponent'
-import { fetchPhotGallery } from './utils/contentful/queries/photoGallery'
+import { fetchPhotoGallery } from './utils/contentful/queries/photoGallery'
 import { PhotoGallerySection } from './components/imageComponents/PhotoGallerySection'
 
 export default async function Home() {
   const projects: Project[] = await fetchProjects()
   const displayProjects = await fetchDisplayProjectImagesWithDetails()
   const companyInfo = await fetchCompanyAppSetting()
-  const gallery = await fetchPhotGallery()
+  const gallery = await fetchPhotoGallery()
+
+  // const galleryString = JSON.stringify(gallery)
+
+  // localStorage.setItem('photoGallery', galleryString)
 
   return (
     <Main>
