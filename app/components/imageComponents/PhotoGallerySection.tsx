@@ -11,7 +11,10 @@ import { Container, Fade, Section, Slide } from '../baseComponents/base'
 import { PhotoGalleryImageComponent } from './PhotoGalleryImageComponent'
 import { useState } from 'react'
 import { DisplayMediaPopup } from './DisplayMediaPopup'
-import { isImageFile, isVideoFile } from '@/app/utils/helpers/imageOrVideoHelpers'
+import {
+  isImageFile,
+  isVideoFile
+} from '@/app/utils/helpers/imageOrVideoHelpers'
 
 export const PhotoGallerySection = ({
   galleryItems
@@ -42,20 +45,22 @@ export const PhotoGallerySection = ({
 
             return (
               <PopUpButton key={index} onClick={() => PopUp(fileUrl)}>
-                <Fade>
-                  {isImageFile(fileUrl) ? (
+                {isImageFile(fileUrl) ? (
+                  <Fade>
                     <PhotoGalleryImageComponent
                       url={fileUrl}
                       title={item.fields.title}
                     />
-                  ) : isVideoFile(fileUrl) ? (
+                  </Fade>
+                ) : isVideoFile(fileUrl) ? (
+                  <Fade>
                     <PhotoGalleryImageContainer>
                       <VideoComponent url={fileUrl} />
                     </PhotoGalleryImageContainer>
-                  ) : (
-                    <P $white>Unsupported file type</P>
-                  )}
-                </Fade>
+                  </Fade>
+                ) : (
+                  <P $white>Unsupported file type</P>
+                )}
               </PopUpButton>
             )
           })}

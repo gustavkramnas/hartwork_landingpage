@@ -1,6 +1,6 @@
 'use client'
 import styled from 'styled-components'
-import { Container, Fade, Section, Slide } from '../baseComponents/base'
+import { Container, Fade, FadeSection, Slide } from '../baseComponents/base'
 import { PartnerSVG } from './PartnerSVG'
 import { H1 } from '../fontComponents/fonts'
 import { theme } from '@/app/utils/appSettings/theme'
@@ -23,7 +23,7 @@ const Icon = styled.div`
 
 export const PartnerComponent = () => {
   return (
-    <Section>
+    <FadeSection>
       <Container>
         <Slide>
           <H1>Några av våra kunder</H1>
@@ -36,6 +36,6 @@ export const PartnerComponent = () => {
           ))}
         </IconContainer>
       </Container>
-    </Section>
+    </FadeSection>
   )
 }

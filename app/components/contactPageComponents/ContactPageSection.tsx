@@ -1,5 +1,5 @@
 import { fetchCompanyAppSetting } from '@/app/utils/contentful/queries/home'
-import { Container, Section, Slide } from '../baseComponents/base'
+import { Container, FadeSection, Slide } from '../baseComponents/base'
 import { ContactInfo } from '../baseComponents/ContactInfoComponent'
 import { ContactContainer, ItemContainer } from './StyledComponents'
 import { A, DisplayH1, P } from '../fontComponents/fonts'
@@ -7,7 +7,7 @@ import { A, DisplayH1, P } from '../fontComponents/fonts'
 export const ContactPageSection = async () => {
   const contactInfo = await fetchCompanyAppSetting()
   return (
-    <Section>
+    <FadeSection>
       <ContactContainer>
       <Slide>
           <DisplayH1>
@@ -21,6 +21,6 @@ export const ContactPageSection = async () => {
       <Container>
         <ContactInfo allInfo />
       </Container>
-    </Section>
+    </FadeSection>
   )
 }

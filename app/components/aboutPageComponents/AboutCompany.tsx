@@ -1,6 +1,6 @@
 'use client'
 import styled from 'styled-components'
-import { Section, Container } from '../baseComponents/base'
+import { Container, FadeSection } from '../baseComponents/base'
 import { H1 } from '../fontComponents/fonts'
 import { theme } from '@/app/utils/appSettings/theme'
 
@@ -14,13 +14,13 @@ const ContactContainer = styled.div`
 
 export const AboutCompany = ({ info }: Props) => {
   return (
-    <Section>
+    <FadeSection>
       <Container>
         <H1>Hartwork</H1>
         <ContactContainer>
           {info}
         </ContactContainer>
       </Container>
-    </Section>
+    </FadeSection>
   )
 }

@@ -1,6 +1,6 @@
 'use client'
 import styled from 'styled-components'
-import { Container, Section, Slide } from '../baseComponents/base'
+import { Container, FadeSection, Slide } from '../baseComponents/base'
 import { H2 } from '../fontComponents/fonts'
 import { Project } from '@/app/types/Types'
 import { ProjectThumbnailComponent } from './ProjectThumbnailComponent'
@@ -30,7 +30,7 @@ const ProjectItem = styled.div`
 
 export const ProjectSection = ({ headLine, projects }: Props) => {
   return (
-    <Section>
+    <FadeSection>
       <Container>
         <Slide>
           <H2>{headLine}</H2>
@@ -55,6 +55,6 @@ export const ProjectSection = ({ headLine, projects }: Props) => {
           )
         })}
       </ItemsContainer>
-    </Section>
+    </FadeSection>
   )
 }

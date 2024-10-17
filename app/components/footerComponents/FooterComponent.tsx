@@ -1,5 +1,5 @@
 import { theme } from '../../utils/appSettings/theme'
-import { Container, Section } from '../baseComponents/base'
+import { Container, FadeSection } from '../baseComponents/base'
 import { ContactInfo } from '../baseComponents/ContactInfoComponent'
 import { CompanyLogo } from '../baseComponents/CompanyLogo'
 import { FlexContainer } from './StyledComponent'
@@ -17,7 +17,7 @@ export const Footer = async () => {
         background: theme.style.colors.primary
       }}
     >
-      <Section>
+      <FadeSection>
         <Container>
           <FlexContainer>
             <div>
@@ -29,7 +29,7 @@ export const Footer = async () => {
             </SmallP>
           </FlexContainer>
         </Container>
-      </Section>
+      </FadeSection>
     </footer>
   )
 }

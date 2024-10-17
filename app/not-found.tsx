@@ -1,20 +1,20 @@
 import {
   MainWithPaddingTop,
-  Section,
   Container,
-  FlexContainer
+  FlexContainer,
+  FadeSection
 } from './components/baseComponents/base'
 import { DisplayH1 } from './components/fontComponents/fonts'
 
 const NotFound = async () => {
   return (
     <MainWithPaddingTop>
-      <Section>
+      <FadeSection>
         <FlexContainer>
           <DisplayH1>404</DisplayH1>
         </FlexContainer>
         <Container></Container>
-      </Section>
+      </FadeSection>
     </MainWithPaddingTop>
   )
 }
