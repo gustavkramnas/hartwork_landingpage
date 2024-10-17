@@ -8,7 +8,7 @@ export const renderOptions = {
     [BLOCKS.HEADING_2]: (node: any, children: any) => <H2>{children}</H2>,
     [BLOCKS.HEADING_3]: (node: any, children: any) => <H3>{children}</H3>,
     [BLOCKS.PARAGRAPH]: (node: any, children: any) => {
-      const textWithLineBreaks = children.map((child: any, index: number) =>
+      const textWithLineBreaks = children.map((child: any) =>
         typeof child === 'string'
           ? child.split('\n').map((line, i) => (
               <span key={i}>
