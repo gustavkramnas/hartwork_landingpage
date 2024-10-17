@@ -8,6 +8,7 @@ import {
 } from '@/app/utils/helpers/imageOrVideoHelpers'
 import { VideoComponent } from './VideoComponent'
 import { H1 } from '../fontComponents/fonts'
+import { Loader } from '../baseComponents/base'
 
 type Props = {
   src: string
@@ -62,13 +63,24 @@ export const DisplayMediaPopup = ({ src, onClick }: Props) => {
           <CloseButton $white onClick={onClick} />
         </ButtonContainer>
         <ImageContainer>
-          {isImageFile(src) ? (
+          {src ? (
+            isImageFile(src) ? (
+              <ImageComponentForPopup url={src} />
+            ) : isVideoFile(src) ? (
+              <VideoComponent url={src} />
+            ) : (
+              <H1>Unsupported file type</H1>
+            )
+          ) : (
+            <Loader />
+          )}
+          {/* {isImageFile(src) ? (
             <ImageComponentForPopup url={src} />
           ) : isVideoFile(src) ? (
             <VideoComponent url={src} />
           ) : (
             <H1>Unsupported file type</H1>
-          )}
+          )} */}
         </ImageContainer>
       </PopupContainer>
     </PopupWrapper>
