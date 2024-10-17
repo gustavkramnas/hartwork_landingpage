@@ -12,7 +12,13 @@ export const fetchExample = async (): Promise<any> => {
 }
 
 export const fetchCompanyAppSetting = async (): Promise<any> => {
-  const response = await ContentfulClient.getEntry('1RKnCVCc051kwYj8JJmcxK')
-  return response
-}
+  try {
+    const response = await ContentfulClient.getEntry('1RKnCVCc051kwYj8JJmcxK')
+    return response
+  }
+  catch (error) {
+    console.error('Error fetching company app settings:', error)
+    throw new Error('Failed to fetch company app settings')
+  }
 
+}
