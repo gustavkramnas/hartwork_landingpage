@@ -26,6 +26,7 @@ export const ImageComponentForPopup = ({ url, title }: ImageProps) => {
         alt={title || 'Alt text'}
         priority
         fill
+        // loading="lazy"
         placeholder="empty"
         sizes="100%"
         style={{ objectFit: 'contain' }}
