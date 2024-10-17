@@ -42,11 +42,11 @@ const PopupWrapper = styled.div`
 const PopupContainer = styled.div`
   display: grid;
   gap: ${theme.style.layout.gap};
-  grid-template-columns: 30px auto;
+  grid-template-rows: 30px auto;
 `
 const ButtonContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 30px;
 `
