@@ -12,7 +12,8 @@ const MobileContainer = styled.div<Props>`
   position: fixed;
   height: 100vh;
   z-index: 999;
-  right: ${({ $showMenu }) => ($showMenu ? '0' : '-100vw')};
+  // right: ${({ $showMenu }) => ($showMenu ? '0' : '-100vw')};
+  right: 0;
   top: ${theme.style.layout.mobileContainerNavPadding};
   width: 100%;
   transition: right 0.3s ease-in-out;

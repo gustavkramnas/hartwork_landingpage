@@ -12,7 +12,11 @@ type Props = {
 
 type MobileButtonProps = {
   onClick: () => void
-  $white?:boolean
+  $white?: boolean
+} & ButtonProps
+
+type ButtonProps = {
+  children: React.ReactNode
 }
 
 const LinkButton = styled(Link)`
@@ -43,6 +47,28 @@ const AppLinkButton = styled(Link)`
   justify-content: center;
   align-items: center;
   max-width: 100px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  transition: transform 0.2s;
+  &:hover {
+    transform: translateY(-3px);
+  }
+`
+
+const ButtonWrapper = styled.button`
+  cursor: pointer;
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: ${theme.style.colors.tertiary};
+  background-color: ${theme.style.colors.secondary};
+  padding: ${theme.style.layout.buttonsPadding};
+  border-radius: ${theme.style.layout.buttonRadius};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   transition: transform 0.2s;
@@ -130,6 +156,10 @@ export const ArrowButton = ({ href, title }: Props) => {
   )
 }
 
+export const Button = ({ onClick, children }: MobileButtonProps) => {
+  return <ButtonWrapper onClick={onClick}>{children}</ButtonWrapper>
+}
+
 export const AppButton = ({ href, title }: Props) => {
   return (
     <AppLinkButton href={href}>
@@ -188,7 +218,9 @@ export const HamBurgerButton = ({ onClick }: MobileButtonProps) => {
 }
 
 export const CloseButton = ({ onClick, $white }: MobileButtonProps) => {
-  const stroke = $white? theme.style.colors.tertiary:  theme.style.colors.primary
+  const stroke = $white
+    ? theme.style.colors.tertiary
+    : theme.style.colors.primary
   const strokeMiterlimit = '10'
   return (
     <MobileButton onClick={onClick}>
