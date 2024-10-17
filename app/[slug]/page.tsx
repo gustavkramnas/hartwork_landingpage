@@ -1,6 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { ContactSection } from "../components/baseComponents/ContactSection"
-import { H1 } from "../components/fontComponents/fonts"
 import { GalleryComponent } from "../components/imageComponents/GalleryComponent"
 import { AboutProjectSection } from "../components/projectComponents/AboutProjectSection"
 import { ProjectSection } from "../components/projectComponents/ProjectSection"
@@ -10,6 +9,7 @@ import { renderOptions } from "../utils/contentful/renderOptions"
 import { extractGalleryItems } from "../utils/helpers/galleryHelpers"
 import { Main } from "../components/baseComponents/base"
 import { ImageComponent } from "../components/imageComponents/ImageComponent"
+import NotFound from "../not-found"
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const projects = await fetchProjects()
@@ -18,7 +18,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   )
 
   if (!project) {
-    return <H1>No Post Found</H1>
+    return NotFound();
   }
 
   const galleryItems = extractGalleryItems(project)

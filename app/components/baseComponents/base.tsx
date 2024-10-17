@@ -41,6 +41,12 @@ const BuildSection = styled.section`
     padding: ${theme.style.layout.mobileSectionPadding} ${theme.style.layout.mobileEdgePadding};
   }
 `
+export const FlexContainer = styled(Container)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 export const ThirdOfAContainer = styled(Container)`
   /* max-width: calc(${theme.style.layout.sizes.maxWidth} / 3); */
   max-width: 480px;
@@ -58,7 +64,7 @@ const SlideContainer = styled.div`
   opacity: 0;
   transform: translateX(5%);
   transition: opacity 0.5s ease, transform 0.5s ease;
-  max-width: 10%;
+  max-width: 5%;
   overflow: hidden;
 
   &.visible {
