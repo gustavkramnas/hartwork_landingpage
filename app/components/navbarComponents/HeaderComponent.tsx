@@ -18,27 +18,29 @@ export const HeaderComponent = () => {
   const mobileQueryWidth = parseInt(theme.style.layout.sizes.mobileQueries, 10)
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      const windowWidth = window.innerWidth
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+        const windowWidth = window.innerWidth;
 
-      if (windowWidth > mobileQueryWidth) {
-        if (currentScrollY > 70) {
-          setScrolled(true)
+        if (windowWidth > mobileQueryWidth) {
+          if (currentScrollY > 70) {
+            setScrolled(true);
+          } else {
+            setScrolled(false);
+          }
         } else {
-          setScrolled(false)
+          setScrolled(false);
         }
-      } else {
-        setScrolled(false)
-      }
-      setLastScrollY(currentScrollY)
-    }
+        setLastScrollY(currentScrollY);
+      };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
     }
-  }, [lastScrollY, mobileQueryWidth])
+  }, [lastScrollY, mobileQueryWidth]);
 
   const openMenu = () => {
     setShowMenu(true)
@@ -50,7 +52,7 @@ export const HeaderComponent = () => {
     setShowMenu(false)
   }
 
-  const isMobile = window.innerWidth <= mobileQueryWidth
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= mobileQueryWidth;
   const isScrolledOrMenuOpen = isMobile
     ? scrolled || !showMenu
     : scrolled
