@@ -53,6 +53,10 @@ const ButtonContainer = styled.div`
 const ImageContainer = styled.div`
   width: 80vw;
   height: 80vh;
+  @media (max-width: 800px) {
+    width: 90vw;
+    height: 90vh;
+  }
 `
 
 export const DisplayMediaPopup = ({ src, onClick }: Props) => {
