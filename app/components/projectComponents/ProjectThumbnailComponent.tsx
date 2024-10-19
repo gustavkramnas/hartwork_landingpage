@@ -11,6 +11,11 @@ const ThumbnailContainer = styled.div`
   position: relative;
   width: 300px;
   height: 200px;
+
+  @media (max-width: 463px) {
+    width: 460px;
+    height: 250px;
+  }
 `
 
 const ItemContainer = styled.div`
