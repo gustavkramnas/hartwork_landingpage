@@ -1,8 +1,7 @@
-import { theme } from '../../utils/appSettings/theme'
 import { Container, FadeSection } from '../baseComponents/base'
 import { ContactInfo } from '../baseComponents/ContactInfoComponent'
 import { CompanyLogo } from '../baseComponents/CompanyLogo'
-import { FlexContainer } from './StyledComponent'
+import { FlexContainer, FooterWrapper } from './StyledComponent'
 import { SmallP } from '../fontComponents/fonts'
 import { fetchCompanyAppSetting } from '@/app/utils/contentful/queries/home'
 
@@ -10,13 +9,7 @@ export const Footer = async () => {
   const year = new Date().getFullYear()
   const company = await fetchCompanyAppSetting()
   return (
-    <footer
-      style={{
-        margin: 0,
-        padding: 0,
-        background: theme.style.colors.primary
-      }}
-    >
+    <FooterWrapper>
       <FadeSection>
         <Container>
           <FlexContainer>
@@ -30,6 +23,6 @@ export const Footer = async () => {
           </FlexContainer>
         </Container>
       </FadeSection>
-    </footer>
+    </FooterWrapper>
   )
 }
