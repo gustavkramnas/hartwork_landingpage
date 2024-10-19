@@ -38,7 +38,7 @@ export const HeaderComponent = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [lastScrollY])
+  }, [lastScrollY, mobileQueryWidth])
 
   const openMenu = () => {
     setShowMenu(true)
