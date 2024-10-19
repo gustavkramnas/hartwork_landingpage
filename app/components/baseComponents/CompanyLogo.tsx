@@ -79,7 +79,6 @@ export const CompanyLogo = ({ white, $scrolled }: Props) => {
           </g>
         </svg>
       )}
-
     </LogoContainer>
   )
 }
