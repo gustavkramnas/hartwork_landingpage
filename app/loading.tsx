@@ -1,18 +1,25 @@
-import {
-  FlexContainer,
-  Loader,
-  MainWithPaddingTop,
-  Section
-} from './components/baseComponents/base'
+'use client'
+import styled from 'styled-components'
+import { Loader } from './components/baseComponents/base'
+
+const Main = styled.main`
+  position: relative;
+  min-height: 80vh;
+`
+
+const Section = styled.section`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
 
 export default function Loading() {
   return (
-    <MainWithPaddingTop>
+    <Main>
       <Section>
-        <FlexContainer>
-          <Loader />
-        </FlexContainer>
+        <Loader />
       </Section>
-    </MainWithPaddingTop>
+    </Main>
   )
 }
