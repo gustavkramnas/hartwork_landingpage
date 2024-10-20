@@ -14,7 +14,6 @@ export const HeaderComponent = () => {
   const [showHamburger, setShowHamburger] = useState<boolean>(true)
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [scrolled, setScrolled] = useState<boolean>(false)
-  const [lastScrollY, setLastScrollY] = useState<number>(0)
   const mobileQueryWidth = parseInt(theme.style.layout.sizes.mobileQueries, 10)
 
   useEffect(() => {
@@ -24,15 +23,10 @@ export const HeaderComponent = () => {
         const windowWidth = window.innerWidth
 
         if (windowWidth > mobileQueryWidth) {
-          if (currentScrollY > 70) {
-            setScrolled(true)
-          } else {
-            setScrolled(false)
-          }
+          setScrolled(currentScrollY > 70)
         } else {
           setScrolled(false)
         }
-        setLastScrollY(currentScrollY)
       }
 
       window.addEventListener('scroll', handleScroll)
@@ -40,7 +34,7 @@ export const HeaderComponent = () => {
         window.removeEventListener('scroll', handleScroll)
       }
     }
-  }, [lastScrollY, mobileQueryWidth])
+  }, [mobileQueryWidth])
 
   const openMenu = () => {
     setShowMenu(true)

@@ -14,7 +14,7 @@ export const Footer = async () => {
         <Container>
           <FlexContainer>
             <div>
-              <CompanyLogo white />
+              <CompanyLogo $white />
               <ContactInfo />
             </div>
             <SmallP $white>

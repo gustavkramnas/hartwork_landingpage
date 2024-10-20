@@ -1,10 +1,11 @@
 'use client'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import { theme } from '../../utils/appSettings/theme'
 
 type Props = {
-  white?: boolean
+  $white?: boolean
   $scrolled?: boolean
   onClick?: () => void
 }
@@ -14,7 +15,16 @@ const LogoContainer = styled(Link)`
   width: 200px;
 `
 
-export const CompanyLogo = ({ white, $scrolled, onClick }: Props) => {
+export const CompanyLogo = ({ $white, $scrolled, onClick }: Props) => {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  if (!isClient) {
+    return null
+  }
   return (
     <LogoContainer href="/" onClick={onClick}>
       {$scrolled ? (
@@ -39,7 +49,7 @@ export const CompanyLogo = ({ white, $scrolled, onClick }: Props) => {
       ) : (
         <svg
           fill={
-            white ? theme.style.colors.tertiary : theme.style.colors.primary
+            $white ? theme.style.colors.tertiary : theme.style.colors.primary
           }
           id="Layer_1"
           xmlns="http://www.w3.org/2000/svg"
