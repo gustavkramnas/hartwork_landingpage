@@ -41,7 +41,7 @@ export const theme = {
       mobileSectionPadding: '24px',
       desktopSectionPadding: '48px',
       desktopEdgePadding: '15px',
-      mobileEdgePadding: '6px',
+      mobileEdgePadding: '8px',
       buttonsPadding: '12px 24px',
       buttonRadius: '100px',
       gap: '12px',
