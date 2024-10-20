@@ -1,6 +1,7 @@
 import Image from 'next/image'
-import { PhotoGalleryImageContainer } from './StyledComponents'
+
 import { ImageProps } from '@/app/types/Types'
+import { PhotoGalleryImageContainer } from '../imageComponents/StyledComponents'
 
 export const PhotoGalleryImageComponent = ({ url, title }: ImageProps) => {
   return (

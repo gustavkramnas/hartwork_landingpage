@@ -11,7 +11,8 @@ import { ProjectSection } from './components/projectComponents/ProjectSection'
 import { fetchCompanyAppSetting } from './utils/contentful/queries/home'
 import { PartnerComponent } from './components/partnersComponent/PartnerComponent'
 import { fetchPhotoGallery } from './utils/contentful/queries/photoGallery'
-import { PhotoGallerySection } from './components/imageComponents/PhotoGallerySection'
+import { PhotoGallerySection } from './components/galleryComponents/PhotoGallerySection'
+
 
 export default async function Home() {
   const projects: Project[] = await fetchProjects()

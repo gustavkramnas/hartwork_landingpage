@@ -1,6 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { ContactSection } from '../components/baseComponents/ContactSection'
-import { GalleryComponent } from '../components/galleryComponents/GalleryComponent'
+import { GalleryComponent } from '../components/imageComponents/GalleryComponent'
 import { AboutProjectSection } from '../components/projectComponents/AboutProjectSection'
 import { ProjectSection } from '../components/projectComponents/ProjectSection'
 import { Project } from '../types/Types'

@@ -1,6 +1,7 @@
 import { FlexContainer, Loader, MainWithPaddingTop, Section } from '../components/baseComponents/base'
 import { ContactSection } from '../components/baseComponents/ContactSection'
-import { PhotoGallerySection } from '../components/imageComponents/PhotoGallerySection'
+import { PhotoGallerySection } from '../components/galleryComponents/PhotoGallerySection'
+
 import { ProjectSection } from '../components/projectComponents/ProjectSection'
 import { fetchPhotoGallery } from '../utils/contentful/queries/photoGallery'
 import { fetchProjects } from '../utils/contentful/queries/project'

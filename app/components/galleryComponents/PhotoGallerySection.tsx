@@ -1,20 +1,16 @@
 'use client'
 import { GalleryComponentProps } from '@/app/types/Types'
-import {
-  PhotoGalleryContainer,
-  PhotoGalleryImageContainer,
-  PopUpButton
-} from './StyledComponents'
-import { VideoComponent } from './VideoComponent'
 import { H1, P } from '../fontComponents/fonts'
 import { Container, Fade, Section, Slide } from '../baseComponents/base'
 import { PhotoGalleryImageComponent } from './PhotoGalleryImageComponent'
 import { useState } from 'react'
-import { DisplayMediaPopup } from './DisplayMediaPopup'
 import {
   isImageFile,
   isVideoFile
 } from '@/app/utils/helpers/imageOrVideoHelpers'
+import { DisplayMediaPopup } from '../imageComponents/DisplayMediaPopup'
+import { PhotoGalleryContainer, PopUpButton, PhotoGalleryImageContainer } from '../imageComponents/StyledComponents'
+import { VideoComponent } from '../imageComponents/VideoComponent'
 
 export const PhotoGallerySection = ({
   galleryItems

@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { ImageContainer } from '../imageComponents/StyledComponents'
+import { ImageContainer } from './StyledComponents'
 import { ImageProps } from '@/app/types/Types'
 
 export const GalleryImageComponent = ({ url, title }: ImageProps) => {
