@@ -20,10 +20,6 @@ export default async function Home() {
   const companyInfo = await fetchCompanyAppSetting()
   const gallery = await fetchPhotoGallery()
 
-  // const galleryString = JSON.stringify(gallery)
-
-  // localStorage.setItem('photoGallery', galleryString)
-
   return (
     <Main>
       <HeroComponent displayProjects={displayProjects} />
