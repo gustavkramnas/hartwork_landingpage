@@ -220,7 +220,6 @@ export type CompanyAppSetting = {
       }>
     }
   }
-
 }
 
 export type PhotoGallery = {
@@ -267,4 +266,8 @@ export type PhotoGallery = {
     title: string
     gallery?: GalleryItem[]
   }
+}
+
+export type GalleryComponentProps = {
+  galleryItems: Array<GalleryItem>
 }

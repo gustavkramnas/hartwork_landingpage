@@ -1,5 +1,5 @@
 
-import { GalleryComponentProps } from '@/app/types/Types'
+
 import { GalleryContainer, GalleryItem } from './StyledComponents'
 import { VideoComponent } from './VideoComponent'
 import { P } from '../fontComponents/fonts'
@@ -9,6 +9,7 @@ import {
   isVideoFile
 } from '@/app/utils/helpers/imageOrVideoHelpers'
 import { GalleryImageComponent } from './GalleryImageComponent'
+import { GalleryComponentProps } from '@/app/types/Types'
 
 export const GalleryComponent = ({ galleryItems }: GalleryComponentProps) => {
   return (

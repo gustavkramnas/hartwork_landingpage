@@ -1,5 +1,5 @@
 'use client'
-import { GalleryItem } from '@/app/types/Types'
+import { GalleryComponentProps } from '@/app/types/Types'
 import { P } from '../fontComponents/fonts'
 import { Container, Fade, Heading, Section, Slide } from '../baseComponents/base'
 import { PhotoGalleryImageComponent } from './PhotoGalleryImageComponent'
@@ -12,15 +12,14 @@ import { DisplayMediaPopup } from '../imageComponents/DisplayMediaPopup'
 import { PhotoGalleryContainer, PopUpButton, PhotoGalleryImageContainer } from '../imageComponents/StyledComponents'
 import { VideoComponent } from '../imageComponents/VideoComponent'
 
-type GalleryComponentProps = {
-  galleryItems: Array<GalleryItem>
+type GalleryProps = {
   headLine: string
   h1?: boolean
-}
+} & GalleryComponentProps
 
 export const PhotoGallerySection = ({
   galleryItems, headLine, h1
-}: GalleryComponentProps) => {
+}: GalleryProps) => {
   const [showMedia, setShowMedia] = useState('')
 
   const PopUp = (src: string) => {
