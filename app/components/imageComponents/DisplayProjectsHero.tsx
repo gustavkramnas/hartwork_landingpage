@@ -21,6 +21,9 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  @media (max-width: ${theme.style.layout.sizes.mobileQueries}) {
+    height: 80vh;
+  }
 `
 
 const Fade = styled.div<{ $isVisible: boolean }>`
