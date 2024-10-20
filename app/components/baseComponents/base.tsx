@@ -2,10 +2,15 @@
 import { theme } from '@/app/utils/appSettings/theme'
 import { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
+import { H1, H2 } from '../fontComponents/fonts'
 
 type SectionProps = {
   children: React.ReactNode
 }
+
+type HeadingProps = {
+  h1?: boolean
+} & SectionProps
 
 export const Main = styled.main`
   min-height: 80vh;
@@ -207,6 +212,10 @@ const LoaderContainer = styled.div`
 
 export const Loader = () => {
   return <LoaderContainer />
+}
+
+export const Heading = ({ children, h1 }: HeadingProps) => {
+  return h1 ? <H1>{children}</H1> : <H2>{children}</H2>
 }
 
 // const heartBeat = keyframes`
