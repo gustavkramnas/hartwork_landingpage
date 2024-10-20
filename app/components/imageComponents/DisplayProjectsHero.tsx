@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   height: 100vh;
   overflow: hidden;
   @media (max-width: ${theme.style.layout.sizes.mobileQueries}) {
-    height: 80vh;
+    height: 85vh;
   }
 `
 

@@ -1,15 +1,15 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import { ContactSection } from "../components/baseComponents/ContactSection"
-import { GalleryComponent } from "../components/imageComponents/GalleryComponent"
-import { AboutProjectSection } from "../components/projectComponents/AboutProjectSection"
-import { ProjectSection } from "../components/projectComponents/ProjectSection"
-import { Project } from "../types/Types"
-import { fetchProjects } from "../utils/contentful/queries/project"
-import { renderOptions } from "../utils/contentful/renderOptions"
-import { extractGalleryItems } from "../utils/helpers/galleryHelpers"
-import { Main } from "../components/baseComponents/base"
-import { ImageComponent } from "../components/imageComponents/ImageComponent"
-import NotFound from "../not-found"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { ContactSection } from '../components/baseComponents/ContactSection'
+import { GalleryComponent } from '../components/galleryComponents/GalleryComponent'
+import { AboutProjectSection } from '../components/projectComponents/AboutProjectSection'
+import { ProjectSection } from '../components/projectComponents/ProjectSection'
+import { Project } from '../types/Types'
+import { fetchProjects } from '../utils/contentful/queries/project'
+import { renderOptions } from '../utils/contentful/renderOptions'
+import { extractGalleryItems } from '../utils/helpers/galleryHelpers'
+import { Main } from '../components/baseComponents/base'
+import { ImageComponent } from '../components/imageComponents/ImageComponent'
+import NotFound from '../not-found'
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const projects = await fetchProjects()
@@ -18,7 +18,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   )
 
   if (!project) {
-    return NotFound();
+    return NotFound()
   }
 
   const galleryItems = extractGalleryItems(project)
