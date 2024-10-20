@@ -147,10 +147,6 @@ export type GalleryItem = {
   }
 }
 
-export type GalleryComponentProps = {
-  galleryItems: Array<GalleryItem>
-}
-
 export type CompanyAppSetting = {
   sys: {
     id: string

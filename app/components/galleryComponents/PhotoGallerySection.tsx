@@ -1,7 +1,7 @@
 'use client'
-import { GalleryComponentProps } from '@/app/types/Types'
-import { H1, P } from '../fontComponents/fonts'
-import { Container, Fade, Section, Slide } from '../baseComponents/base'
+import { GalleryItem } from '@/app/types/Types'
+import { P } from '../fontComponents/fonts'
+import { Container, Fade, Heading, Section, Slide } from '../baseComponents/base'
 import { PhotoGalleryImageComponent } from './PhotoGalleryImageComponent'
 import { useState } from 'react'
 import {
@@ -12,8 +12,14 @@ import { DisplayMediaPopup } from '../imageComponents/DisplayMediaPopup'
 import { PhotoGalleryContainer, PopUpButton, PhotoGalleryImageContainer } from '../imageComponents/StyledComponents'
 import { VideoComponent } from '../imageComponents/VideoComponent'
 
+type GalleryComponentProps = {
+  galleryItems: Array<GalleryItem>
+  headLine: string
+  h1?: boolean
+}
+
 export const PhotoGallerySection = ({
-  galleryItems
+  galleryItems, headLine, h1
 }: GalleryComponentProps) => {
   const [showMedia, setShowMedia] = useState('')
 
@@ -26,7 +32,7 @@ export const PhotoGallerySection = ({
     <Section>
       <Container>
         <Slide>
-          <H1>Blandade jobb åt kund</H1>
+          <Heading h1={h1}>{headLine}</Heading>
         </Slide>
         <PhotoGalleryContainer>
           {galleryItems.map((item, index) => {

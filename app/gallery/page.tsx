@@ -1,4 +1,9 @@
-import { FlexContainer, Loader, MainWithPaddingTop, Section } from '../components/baseComponents/base'
+import {
+  FlexContainer,
+  Loader,
+  MainWithPaddingTop,
+  Section
+} from '../components/baseComponents/base'
 import { ContactSection } from '../components/baseComponents/ContactSection'
 import { PhotoGallerySection } from '../components/galleryComponents/PhotoGallerySection'
 
@@ -15,7 +20,10 @@ const Page = async () => {
 
     return (
       <MainWithPaddingTop>
-        <PhotoGallerySection galleryItems={galleryItems} />
+        <PhotoGallerySection
+          headLine={'Blandade jobb åt kund'}
+          galleryItems={galleryItems}
+        />
         <ProjectSection headLine={'Andra projekt'} projects={projects} />
         <ContactSection />
       </MainWithPaddingTop>

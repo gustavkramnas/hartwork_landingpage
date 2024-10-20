@@ -1,7 +1,6 @@
 'use client'
 import styled from 'styled-components'
-import { Container, FadeSection, Slide } from '../baseComponents/base'
-import { H2 } from '../fontComponents/fonts'
+import { Container, FadeSection, Heading, Slide } from '../baseComponents/base'
 import { Project } from '@/app/types/Types'
 import { ProjectThumbnailComponent } from './ProjectThumbnailComponent'
 import { theme } from '@/app/utils/appSettings/theme'
@@ -9,6 +8,7 @@ import { theme } from '@/app/utils/appSettings/theme'
 type Props = {
   headLine: string
   projects: Project[]
+  h1?: boolean
 }
 
 const ItemsContainer = styled.div`
@@ -28,12 +28,12 @@ const ProjectItem = styled.div`
   overflow: hidden;
 `
 
-export const ProjectSection = ({ headLine, projects }: Props) => {
+export const ProjectSection = ({ headLine, projects, h1 }: Props) => {
   return (
     <FadeSection>
       <Container>
         <Slide>
-          <H2>{headLine}</H2>
+          <Heading h1={h1}>{headLine}</Heading>
         </Slide>
       </Container>
       <ItemsContainer>

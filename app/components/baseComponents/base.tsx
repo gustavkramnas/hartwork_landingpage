@@ -215,7 +215,7 @@ export const Loader = () => {
 }
 
 export const Heading = ({ children, h1 }: HeadingProps) => {
-  return h1 ? <H1>{children}</H1> : <H2>{children}</H2>
+  return h1 ? <H1>kuk{children}</H1> : <H2>{children}</H2>
 }
 
 // const heartBeat = keyframes`

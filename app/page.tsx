@@ -34,7 +34,7 @@ export default async function Home() {
       <ProjectSection headLine={'Några av våra projekt'} projects={projects} />
       <ContactSection />
       <PartnerComponent />
-      <PhotoGallerySection galleryItems={gallery.fields.gallery} />
+      <PhotoGallerySection headLine={"Blandade jobb åt kund"} galleryItems={gallery.fields.gallery} />
     </Main>
   )
 }
