@@ -6,6 +6,7 @@ import { theme } from '../../utils/appSettings/theme'
 type Props = {
   white?: boolean
   $scrolled?: boolean
+  onClick?: () => void
 }
 
 const LogoContainer = styled(Link)`
@@ -13,9 +14,9 @@ const LogoContainer = styled(Link)`
   width: 200px;
 `
 
-export const CompanyLogo = ({ white, $scrolled }: Props) => {
+export const CompanyLogo = ({ white, $scrolled, onClick }: Props) => {
   return (
-    <LogoContainer href="/">
+    <LogoContainer href="/" onClick={onClick}>
       {$scrolled ? (
         // no undertitle
         <svg
