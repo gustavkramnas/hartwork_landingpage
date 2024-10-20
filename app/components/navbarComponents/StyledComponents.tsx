@@ -50,6 +50,6 @@ export const MobileButtonContainer = styled.div`
   @media (max-width: ${theme.style.layout.sizes.mobileQueries}) {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
 `
