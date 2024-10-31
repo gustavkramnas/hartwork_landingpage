@@ -7,7 +7,7 @@ const Page = async () => {
   const projects = await fetchProjects()
   return (
     <MainWithPaddingTop>
-      <ProjectSection headLine={'Några av våra projekt'} projects={projects} />
+      <ProjectSection h1 headLine={'Några av våra projekt'} projects={projects} />
       <ContactSection />
     </MainWithPaddingTop>
   )
