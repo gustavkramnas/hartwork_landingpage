@@ -18,6 +18,7 @@ export const ContactPageSection = async () => {
           <P>{contactInfo.fields.contactCompanyInfo}</P>
         </ItemContainer>
       </ContactContainer>
+      <br></br>
       <Container>
         <ContactInfo allInfo />
       </Container>
