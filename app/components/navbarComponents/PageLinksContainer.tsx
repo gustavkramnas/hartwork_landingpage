@@ -29,7 +29,7 @@ const PageLink = styled(Link)`
   text-decoration: none;
   color: ${theme.style.colors.primary};
   font-weight: 600;
-  font-family: ${theme.style.font.fontFamily};
+  /* font-family: ${theme.style.font.fontFamily}; */
   padding: 5px 10px;
   transition: 0.6s;
 `
