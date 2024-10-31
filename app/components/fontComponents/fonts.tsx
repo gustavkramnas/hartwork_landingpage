@@ -70,7 +70,7 @@ export const P = styled.p<Props>`
   color: ${(props) =>
     props.$white ? theme.style.colors.tertiary : theme.style.colors.primary};
   line-height: ${theme.style.font.paragraphLineHeight};
-  font-weight: ${(props) => (props.$bold ? '800' : '400')};
+  font-weight: ${(props) => (props.$bold ? '700' : '400')};
 `
 export const SmallP = styled(P)`
   font-size: ${theme.style.font.smallParagraphSize};
