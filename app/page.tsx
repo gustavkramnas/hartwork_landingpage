@@ -9,7 +9,6 @@ import { AboutSection } from './components/homePageComponents/AboutSection'
 import { ContactSection } from './components/baseComponents/ContactSection'
 import { ProjectSection } from './components/projectComponents/ProjectSection'
 import { fetchCompanyAppSetting } from './utils/contentful/queries/home'
-import { PartnerComponent } from './components/partnersComponent/PartnerComponent'
 import { fetchPhotoGallery } from './utils/contentful/queries/photoGallery'
 import { PhotoGallerySection } from './components/galleryComponents/PhotoGallerySection'
 
@@ -29,7 +28,6 @@ export default async function Home() {
       />
       <ProjectSection headLine={'Några av våra projekt'} projects={projects} />
       <ContactSection />
-      <PartnerComponent />
       <PhotoGallerySection headLine={"Blandade jobb åt kund"} galleryItems={gallery.fields.gallery} />
     </Main>
   )
