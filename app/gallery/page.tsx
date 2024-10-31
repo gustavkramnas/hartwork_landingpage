@@ -21,6 +21,7 @@ const Page = async () => {
     return (
       <MainWithPaddingTop>
         <PhotoGallerySection
+          h1
           headLine={'Blandade jobb åt kund'}
           galleryItems={galleryItems}
         />

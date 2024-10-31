@@ -3,7 +3,6 @@ import { AboutCompany } from '../components/aboutPageComponents/AboutCompany'
 import { Main } from '../components/baseComponents/base'
 import { ContactSection } from '../components/baseComponents/ContactSection'
 import { HeroComponent } from '../components/imageComponents/DisplayProjectsHero'
-import { PartnerComponent } from '../components/partnersComponent/PartnerComponent'
 import { fetchCompanyAppSetting } from '../utils/contentful/queries/home'
 import { fetchDisplayProjectImagesWithDetails } from '../utils/contentful/queries/project'
 import { renderOptions } from '../utils/contentful/renderOptions'
@@ -22,7 +21,6 @@ const Page = async () => {
         )}
       />
       <ContactSection />
-      <PartnerComponent />
     </Main>
   )
 }
