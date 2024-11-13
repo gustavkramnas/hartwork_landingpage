@@ -204,7 +204,11 @@ export type CompanyAppSetting = {
     aboutCompany?: string
     email?: string
     contactPerson?: string
-    phoneNumber?: string
+    contactPerson1?: string
+    contactEmail1?: string
+    contactPerson2?: string
+    contactEmail2?: string
+    phoneNumber1?: string
     shortDescription?: string
     contactCompanyInfo?: string
     aboutUs?: {

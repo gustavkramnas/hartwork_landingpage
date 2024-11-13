@@ -22,14 +22,14 @@ export default async function Home() {
     <Main>
       <HeroComponent displayProjects={displayProjects} />
       <AboutSection
-        companyName={companyInfo.fields.companyName}
+        companyName={"HEJ"}
         pitch={companyInfo.fields.shortDescription}
       />
       {/* <TestComponent /> */}
-      <ProjectSection headLine={'Några av våra projekt'} projects={projects} />
+      <ProjectSection headLine={'Några av våra uppdrag'} projects={projects} />
       <ContactSection />
       <PhotoGallerySection
-        headLine={'Blandade jobb åt kund'}
+        headLine={'Fler spännande uppdrag'}
         galleryItems={gallery.fields.gallery}
       />
     </Main>

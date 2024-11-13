@@ -22,10 +22,10 @@ const Page = async () => {
       <MainWithPaddingTop>
         <PhotoGallerySection
           h1
-          headLine={'Blandade jobb åt kund'}
+          headLine={'Några av våra uppdrag'}
           galleryItems={galleryItems}
         />
-        <ProjectSection headLine={'Andra projekt'} projects={projects} />
+        <ProjectSection headLine={'Fler spännande uppdrag'} projects={projects} />
         <ContactSection />
       </MainWithPaddingTop>
     )
