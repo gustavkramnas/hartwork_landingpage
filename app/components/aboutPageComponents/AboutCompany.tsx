@@ -16,7 +16,7 @@ export const AboutCompany = ({ info }: Props) => {
   return (
     <FadeSection>
       <Container>
-        <H1>Hartwork</H1>
+        <H1>HEJ</H1>
         <ContactContainer>
           {info}
         </ContactContainer>

@@ -7,12 +7,11 @@ export const ContactSection = () => {
   return (
     <Section>
       <Container>
-        <H2>Arbeta med oss</H2>
+        <H2>Nyfiken?</H2>
         <ThirdOfAContainer style={{ paddingBottom: '20px' }}>
           <P>
-            Oavsett om ni behöver affischer, digitala banners eller
-            eventlösningar, är vi här för att hjälpa er. Hör av dig, vare sig du
-            vill diskutera ett nytt projekt eller bara ta en kaffe.
+            Hör av dig, vare sig du vill diskutera ett nytt projekt eller bara
+            ses för en god kopp kaffe.
           </P>
         </ThirdOfAContainer>
 

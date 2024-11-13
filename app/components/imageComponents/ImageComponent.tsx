@@ -11,8 +11,7 @@ export const ImageComponent = ({ url, title }: ImageProps) => {
         fill
         priority
         style={{ objectFit: 'cover' }}
-        quality={65}
-        unoptimized
+        quality={15}
       />
     </LargeImageContainer>
   )
@@ -34,4 +33,3 @@ export const ImageComponentForPopup = ({ url, title }: ImageProps) => {
     </RegularImageContainer>
   )
 }
-

@@ -6,7 +6,7 @@ export const theme = {
       { title: 'Om oss', href: '/about' },
       { title: 'Kontakt', href: '/contact' },
       { title: 'Kunduppdrag', href: '/projects' },
-      { title: 'Gallery', href: '/gallery' }
+      { title: 'Galleri', href: '/gallery' }
     ]
   },
   style: {

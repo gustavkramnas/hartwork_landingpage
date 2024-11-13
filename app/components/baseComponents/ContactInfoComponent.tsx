@@ -13,17 +13,31 @@ export const ContactInfo = async ({ allInfo }: Props) => {
         <>
           {/* <H6>{contactInfo.fields.contactCompanyInfo}</H6> */}
           <H3>Kontakta:</H3>
-          <P $bold>{contactInfo.fields.contactPerson}</P>
+          <P $bold>{contactInfo.fields.contactPerson1}</P>
           <P $bold>
-            <A href={`tel:${contactInfo.fields.phoneNumber}`}>
-              {contactInfo.fields.phoneNumber}
+            <A href={`tel:${contactInfo.fields.phoneNumber1}`}>
+              {contactInfo.fields.phoneNumber1}
             </A>
           </P>
         </>
       )}
       <P $bold>
         <A $white={!allInfo} href={`mailto:${contactInfo.fields.email}`}>
-          {contactInfo.fields.email}
+          {contactInfo.fields.contactEmail1}
+        </A>
+      </P>
+
+      {allInfo && (
+        <div>
+          <br></br>
+        <P $bold>{contactInfo.fields.contactPerson2}</P>
+        </div>
+
+      )}
+
+      <P $bold>
+        <A $white={!allInfo} href={`mailto:${contactInfo.fields.email}`}>
+          {contactInfo.fields.contactEmail2}
         </A>
       </P>
     </>
